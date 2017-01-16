@@ -274,9 +274,10 @@ public function tabla_informe()
   $this->load->model('paciente_model');
   $data['datos'] = $this->paciente_model->buscar_paciente(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
 
-  $session_data = $this->session->userdata('logged_in');
-  $data['username'] = $session_data['username'];
-  $data['id'] = $session_data['id'];
+  $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
 
   $this->load->view('menu_navegacion_espe',$data);  
   $this->load->view('c_informe',$data);
@@ -288,8 +289,10 @@ public function tabla_informe()
   $this->load->model('paciente_model');
   $data['datos'] = $this->paciente_model->buscar_paciente(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
 
-  $session_data = $this->session->userdata('logged_in');
-  $data['username'] = $session_data['username'];
+  $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
 
   $this->load->view('menu_navegacion_espe',$data);  
   $this->load->view('c_informe',$data);
@@ -314,8 +317,10 @@ public function tabla_informe()
                         $data['datos'] = $this->paciente_model->buscar(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
                         $data['informe'] = $this->paciente_model->buscar_informes(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
 
-                        $session_data = $this->session->userdata('logged_in');
-                        $data['username'] = $session_data['username']; 
+                        $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
 
                         $data["error"] =  "El archivo que intenta cargar no esta permitido por su peso o por su tipo";          
 
@@ -338,8 +343,10 @@ public function tabla_informe()
                         $data['datos'] = $this->paciente_model->buscar(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
                         $data['informe'] = $this->paciente_model->buscar_informes(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
 
-                        $session_data = $this->session->userdata('logged_in');
-                        $data['username'] = $session_data['username'];
+                       $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
 
                         $data["error"] =  "Archivo cargado exitosamente";            
 
@@ -359,8 +366,10 @@ public function tabla_informe()
   $data['datos'] = $this->paciente_model->buscar(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
   $data['informe'] = $this->paciente_model->buscar_informes(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
 
-  $session_data = $this->session->userdata('logged_in');
-  $data['username'] = $session_data['username'];           
+$data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');        
 
   $this->load->view('menu_navegacion_espe',$data);
   
