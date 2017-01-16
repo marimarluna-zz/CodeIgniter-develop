@@ -105,6 +105,10 @@ form {float:right;}
                 <label>Contraseña</label>
                 <input type="password" id="password" name="password" placeholder="****" class="form-control">
               </div> 
+								<input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
                 </div>
                 </div>
 
