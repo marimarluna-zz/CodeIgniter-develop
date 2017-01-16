@@ -13,6 +13,10 @@ class Especialista_controller extends CI_Controller {
  function index()
  {
    $this->load->helper(array('form'));
+	  $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
    $this->load->view('menu_navegacion_admin', $data);
    $this->load->view('c_especialista', $data);
  }
