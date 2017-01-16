@@ -33,18 +33,17 @@
         <li style="margin-top: 2%; font-size: 20" ><a href="<?php echo base_url();?>especialista_controller/tabla">Lista Especialista</a></li>
         <li style="margin-top: 2%; font-size: 20" ><a href="<?php echo base_url();?>administrador_controller/tabla">Lista Administrador</a></li>
         <li style="margin-top: 2%; font-size: 20" ><a href="<?php echo base_url();?>usuario_controller/tabla">Buscar Usuarios</a></li>
-        <li style="margin-top: 2%; font-size: 20" >
-			
-			<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-					<input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-					<input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-					<input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" > 
-
-                    <div class="col-sm-1 col-md-offset-1" style="margin-top:-3%"> 
-                            <button type="submit" value='login' name="datos" class="btn btn-danger" > Limpiar </button>
-                    </div>
-		  
-		</li>
+        <li>
+		<form action="<?php echo base_url(); ?>especialista_controller" method="POST">
+              <div class="col-sm-4 col-md-offset-4 " >
+                 <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Registrar Especialista </button>
+		 <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+		 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+		 <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+		 <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+              </div>
+            </form>      
+	</li>
 		  
       </ul>
     </div>
