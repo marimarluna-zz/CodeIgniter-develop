@@ -79,7 +79,19 @@ class VerifyLogin extends CI_Controller {
 
   if ($query -> num_rows() != 0 ) {
 
-    redirect('home', 'refresh');
+    $data['error'] = "Bienvenido ";
+    $data['usuario'] = $sql->usuario;
+    $data['perfil'] = $sql->perfil;
+    $data['clave'] = $sql->clave;
+    $val = $sql->perfil;
+	  
+     if($val == 'Administrador'){
+      $this->load->view('menu_navegacion_admin', $data);
+        $this->load->view('administrador/menu_principal', $data);
+     }else{
+      $this->load->view('menu_navegacion_espe', $data);
+        $this->load->view('especialista/menu_principal', $data);
+     }
 
   } else {
 
