@@ -21,13 +21,16 @@ class Especialista_controller extends CI_Controller {
    $this->load->view('c_especialista', $data);
  }
 
-function guardar(){
+ function guardar(){
 
-    $ci_especialista = $this->input->post('ci_especialista');
+
+
+
+    $ci_administrador = $this->input->post('ci_administrador');
 
     $query = $this->db->select('*')
-                      ->from('especialista')
-                      ->where('ci_especialista', $ci_especialista)
+                      ->from('administrador')
+                      ->where('ci_administrador', $ci_administrador)
                       ->get();
 
           $sql = $query->row();
@@ -35,30 +38,32 @@ function guardar(){
 
   if ($query -> num_rows() != 0 ){
 
-  $data['usuario'] = $this->input->post('usuario');
+      $data['usuario'] = $this->input->post('usuario');
        $data['password'] = $this->input->post('clave');
        $data['perfil'] = $this->input->post('perfil');
        $data['id'] = $this->input->post('id');
+     
    
-   $data['error'] = "Ya existe un especialista con esa cedula";
+   $data['error'] = "Ya existe un c_administrador con esa cedula";
 
    $this->load->view('menu_navegacion_admin', $data);
-   $this->load->view('c_especialista', $data);
+   $this->load->view('c_administrador', $data);
 
   }else{
 
-     $this->load->model('especialista_model');
-     $this->especialista_model->guardar();
+     $this->load->model('administrador_model');
+     $this->administrador_model->guardar();
 
-    $data['usuario'] = $this->input->post('usuario');
+     $data['usuario'] = $this->input->post('usuario');
        $data['password'] = $this->input->post('clave');
        $data['perfil'] = $this->input->post('perfil');
        $data['id'] = $this->input->post('id');
      
 
      $this->load->view('menu_navegacion_admin', $data);
-     $this->load->view('especialista_cargado');
+     $this->load->view('administrador_cargado');
    }
+
 
  }
 
