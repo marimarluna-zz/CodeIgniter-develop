@@ -46,9 +46,10 @@ class Paciente_controller extends CI_Controller {
 
   if ($query -> num_rows() != 0 ){
 
-   $session_data = $this->session->userdata('logged_in');
-   $data['username'] = $session_data['username'];
-   $data['id'] = $session_data['id'];
+    $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
    
    $data['error'] = "Ya existe un paciente con esa cedula";
 
@@ -60,9 +61,10 @@ class Paciente_controller extends CI_Controller {
      $this->load->model('paciente_model');
      $this->paciente_model->guardar();
 
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-     $data['id'] = $session_data['id'];
+						 $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
      
 
      $this->load->view('menu_navegacion_espe', $data);
@@ -136,9 +138,10 @@ class Paciente_controller extends CI_Controller {
 
         $data['pagination'] = $this->pagination->create_links();
 
-           $session_data = $this->session->userdata('logged_in');
-           $data['username'] = $session_data['username'];
-           $data['id'] = $session_data['id'];
+            $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
 
         //load the department_view
         $this->load->view('menu_navegacion_espe', $data);
