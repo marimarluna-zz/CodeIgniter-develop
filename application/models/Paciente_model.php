@@ -9,8 +9,10 @@ function __construct()
   
   public function buscar_paciente() {
 
-   $ci_paciente = $this->input->post('ci_paciente');
-   $session_data = $this->session->userdata('logged_in');
+  $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
 
   $query =  $this->db->query(' SELECT * FROM `paciente` WHERE ci_paciente="'.$ci_paciente.'"');
   $sql = $query->row();
