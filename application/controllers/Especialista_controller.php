@@ -13,13 +13,6 @@ class Especialista_controller extends CI_Controller {
  function index()
  {
    $this->load->helper(array('form'));
-
-   $session_data = $this->session->userdata('logged_in');
-   $data['username'] = $session_data['username'];
-   $data['id'] = $session_data['id'];
-   //$data['nombre'] = $session_data['nombre'];
-   //$data['apellido'] = $session_data['apellido'];
-
    $this->load->view('menu_navegacion_admin', $data);
    $this->load->view('c_especialista', $data);
  }
