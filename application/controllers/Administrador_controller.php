@@ -29,59 +29,34 @@ class Administrador_controller extends CI_Controller {
  }
 
  function guardar(){
-
-
-  $this->load->library('form_validation');
-  // field name, error message, validation rules
-  $this->form_validation->set_rules('nombre', 'El nombre ', 'trim|required|min_length[4]|xss_clean');
-  $this->form_validation->set_rules('apellido', 'El apellido', 'trim|required|min_length[4]|xss_clean');
-  $this->form_validation->set_rules('ci_administrador', 'ci_administrador', 'trim|required|min_length[4]|xss_clean');
- 
-  if($this->form_validation->run() == FALSE)
-  {
-   $this->index();
-  }
-  else
-  {
-
     $ci_administrador = $this->input->post('ci_administrador');
-
     $query = $this->db->select('*')
                       ->from('administrador')
                       ->where('ci_administrador', $ci_administrador)
                       ->get();
-
           $sql = $query->row();
-
-
   if ($query -> num_rows() != 0 ){
-
-   $session_data = $this->session->userdata('logged_in');
-   $data['username'] = $session_data['username'];
-   $data['id'] = $session_data['id'];
+      $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+     
    
    $data['error'] = "Ya existe un c_administrador con esa cedula";
-
    $this->load->view('menu_navegacion_admin', $data);
    $this->load->view('c_administrador', $data);
-
   }else{
-
      $this->load->model('administrador_model');
      $this->administrador_model->guardar();
-
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-     $data['id'] = $session_data['id'];
+     $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
      
-
      $this->load->view('menu_navegacion_admin', $data);
      $this->load->view('administrador_cargado');
    }
-  }
-
  }
-
  function editar(){
 
   $session_data = $this->session->userdata('logged_in');
