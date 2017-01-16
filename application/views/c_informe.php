@@ -53,7 +53,7 @@ form {float:right;}
     <div class="col-sm-12 form-group">
       <div class="col-sm-4 form-group">
         <label>Cedula Paciente</label>
-        <input type="number" min="0" id="ci_paciente" name="ci_paciente" value="<?php echo $datos->ci_paciente; ?>" class="form-control" readonly>
+        <input type="number" min="0" id="ci_paciente" name="ci_paciente" value="<?php echo $ci_paciente; ?>" class="form-control" readonly>
       </div>
       <div class="col-sm-4 form-group">
         <label>Cedula Especialista</label>
