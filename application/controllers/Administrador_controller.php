@@ -14,12 +14,16 @@ class Administrador_controller extends CI_Controller {
  {
    $this->load->helper(array('form'));
 
-   $session_data = $this->session->userdata('logged_in');
-   $data['username'] = $session_data['username'];
-   $data['id'] = $session_data['id'];
+  // $session_data = $this->session->userdata('logged_in');
+  // $data['username'] = $session_data['username'];
+ // $data['id'] = $session_data['id'];
    //$data['nombre'] = $session_data['nombre'];
    //$data['apellido'] = $session_data['apellido'];
-
+			$this->load->helper(array('form'));
+	  	$data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
    $this->load->view('menu_navegacion_admin', $data);
    $this->load->view('c_administrador', $data);
  }
