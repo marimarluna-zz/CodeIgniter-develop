@@ -71,7 +71,7 @@ body {
          <div class="panel-body">
 
                   <?php echo validation_errors(); ?>
-                  <?php echo form_open('application/controllers/verifylogin'); ?>
+                  <?php echo form_open('verifylogin'); ?>
                   
                   <form class="form-signin">
                    
