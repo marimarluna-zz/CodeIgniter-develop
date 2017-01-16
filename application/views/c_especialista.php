@@ -47,7 +47,6 @@ form {float:right;}
   <div class"row">
 
     <div class ="col-md-5" class="container">
-      <?php echo validation_errors(); ?>
       <?php echo form_open('especialista_controller/guardar'); ?>
     </div>
 
