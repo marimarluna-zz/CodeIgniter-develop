@@ -274,7 +274,7 @@ public function tabla_informe()
    function informe(){
 
   $this->load->model('paciente_model');
-  $data['datos'] = $this->paciente_model->buscar_paciente(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
+  $dato['datos'] = $this->paciente_model->buscar_paciente(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
 
   $data['usuario'] = $this->input->post('usuario');
        $data['password'] = $this->input->post('clave');
@@ -284,7 +284,7 @@ public function tabla_informe()
 	   
 
   $this->load->view('menu_navegacion_espe',$data);  
-  $this->load->view('c_informe',$data);
+  $this->load->view('c_informe',$dato);
   
  }
 
