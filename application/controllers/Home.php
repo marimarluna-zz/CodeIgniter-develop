@@ -10,8 +10,7 @@ class Home extends CI_Controller {
  
  function index(){
 
- 	if($this->session->userdata('logged_in'))
-   {
+ //	if($this->session->userdata('logged_in'))  {
 
      $this->load->helper(array('form'));
 	  $data['usuario'] = $this->input->post('usuario');
@@ -32,12 +31,12 @@ class Home extends CI_Controller {
         $this->load->view('especialista/menu_principal', $data);
      }
 
-   }
-   else
-   {
+ //  }
+ //  else
+ //  {
      //If no session, redirect to login page
-     redirect('entrar', 'refresh');
-   }
+ //    redirect('entrar', 'refresh');
+ //  }
 
  }
 
