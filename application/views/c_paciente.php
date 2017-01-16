@@ -87,7 +87,7 @@ form {float:right;}
               <div class="col-sm-12 col-md-offset-2 form-group">
                 <div class="col-sm-4 form-group">
                 <label>Dirección</label>
-                <input type="text" id="direccion" name="direccion" placeholder="especializacion" class="form-control">
+                <input type="text" id="direccion" name="direccion" placeholder="Direccion" class="form-control">
               </div>
               </div>
               </div>
