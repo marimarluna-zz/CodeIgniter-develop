@@ -75,11 +75,50 @@ class Especialista_controller extends CI_Controller {
   $this->load->model('especialista_model');
   $this->especialista_model->editar();
 
-  $session_data = $this->session->userdata('logged_in');
-  $data['username'] = $session_data['username'];
+   //pagination settings
+        $config['base_url'] = site_url('Especialista_controller/tabla');
+        $config['total_rows'] = $this->db->count_all('especialista');
+        $config['per_page'] = "7";
+        $config["uri_segment"] = 3;
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
 
+        //config for bootstrap pagination class integration
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="prev">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
 
-  redirect('especialista_controller/tabla', 'refresh');
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        //call the model function to get the department data
+        $data['deptlist'] = $this->especialista_model->tabla_p($config["per_page"], $data['page']);           
+
+        $data['pagination'] = $this->pagination->create_links();
+
+       $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+
+        //load the department_view
+       $this->load->view('menu_navegacion_admin', $data);
+       $this->load->view('v_tabla_especialista',$data);
  }
 
 function buscar(){
