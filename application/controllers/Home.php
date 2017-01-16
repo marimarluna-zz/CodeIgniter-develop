@@ -18,7 +18,7 @@ class Home extends CI_Controller {
        $data['perfil'] = $this->input->post('perfil');
        $data['id'] = $this->input->post('id');
 			
-     echo  $val = $data['perfil'];
+     $val = $data['perfil'];
 
      $data['error'] = "Bienvenido ";
 
