@@ -48,7 +48,7 @@
 
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <h5><a><b><span class="glyphicon glyphicon-user"></span> <?php echo $username; ?></b></a></h5>
+        <h5><a><b><span class="glyphicon glyphicon-user"></span> <?php echo $usuario; ?></b></a></h5>
       </li>
       <li>
         <a style="margin-top: -6%;" href="<?php echo base_url(); ?>home/logout"><b>Salir <span class="glyphicon glyphicon-share-alt"></span></b></a>
