@@ -135,7 +135,7 @@ function buscar(){
 
         $data['pagination'] = $this->pagination->create_links();
 
-       $data['usuario'] = $this->input->post('usuario');
+      echo $data['usuario'] = $this->input->post('usuario');
 							$data['password'] = $this->input->post('clave');
 							$data['perfil'] = $this->input->post('perfil');
 								$data['id'] = $this->input->post('id');
@@ -144,8 +144,10 @@ function buscar(){
           // $data['id'] = $session_data['id'];
 
         //load the department_view
-        $this->load->view('menu_navegacion_admin', $data);
-        $this->load->view('v_tabla_especialista',$data);
+       // $this->load->view('menu_navegacion_admin', $data);
+       // $this->load->view('v_tabla_especialista',$data);
+	  
+
     }
 
 
