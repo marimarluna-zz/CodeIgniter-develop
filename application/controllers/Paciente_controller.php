@@ -374,7 +374,7 @@ public function tabla_informe()
        $data['password'] = $this->input->post('clave');
        $data['perfil'] = $this->input->post('perfil');
        $data['id'] = $this->input->post('id');
-       $data['id'] = $this->input->post('id');    
+       $data['ci_paciente'] = $this->input->post('ci_paciente');    
 
   $this->load->view('menu_navegacion_espe',$data);
   
