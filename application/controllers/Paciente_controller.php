@@ -70,8 +70,10 @@ class Paciente_controller extends CI_Controller {
   $this->load->model('paciente_model');
   $this->paciente_model->editar();
 
-  $session_data = $this->session->userdata('logged_in');
-  $data['username'] = $session_data['username'];
+   $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
 
   redirect('paciente_controller/tabla', 'refresh');
 
@@ -82,8 +84,10 @@ class Paciente_controller extends CI_Controller {
   $this->load->model('paciente_model');
   $data['datos'] = $this->paciente_model->buscar(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
 
-  $session_data = $this->session->userdata('logged_in');
-  $data['username'] = $session_data['username'];
+   $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
 
   $this->load->view('menu_navegacion_espe',$data);
   
@@ -177,9 +181,10 @@ public function tabla_informe()
 
         $data['pagination'] = $this->pagination->create_links();
 
-           $session_data = $this->session->userdata('logged_in');
-           $data['username'] = $session_data['username'];
-           $data['id'] = $session_data['id'];
+           $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
 
         //load the department_view
         $this->load->view('menu_navegacion_espe', $data);
@@ -223,8 +228,10 @@ public function tabla_informe()
 
         $data['pagination'] = $this->pagination->create_links();
 
-           $session_data = $this->session->userdata('logged_in');
-           $data['username'] = $session_data['username'];
+            $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
            
 
         //load the department_view
@@ -238,8 +245,10 @@ public function tabla_informe()
   $this->load->model('paciente_model');
   $data['datos'] = $this->paciente_model->buscar_paciente(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
 
-  $session_data = $this->session->userdata('logged_in');
-  $data['username'] = $session_data['username'];
+   $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
 
   $this->load->view('menu_navegacion_espe',$data);  
   $this->load->view('buscar_paciente',$data);
@@ -247,8 +256,10 @@ public function tabla_informe()
  }
 
  function busqueda(){
-  $session_data = $this->session->userdata('logged_in');
-  $data['username'] = $session_data['username'];
+   $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
 
   $cedula = $this->input->post('ci_paciente');
 
@@ -257,15 +268,6 @@ public function tabla_informe()
   $sql = $query->row();
 
   echo $query;
-
-//   if ($sql != null){
-  //  $this->load->view('menu_navegacion_espe', $data);
-  //  $this->load->view('ver_paciente', $sql);
-  //}else{ 
-   // $data['error'] = "No existe un paciente con esa cedula";
-   // $this->load->view('menu_navegacion_espe', $data);
-   // $this->load->view('buscar_paciente', $data);
-  //}
  }
 
 
