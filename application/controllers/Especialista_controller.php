@@ -21,21 +21,7 @@ class Especialista_controller extends CI_Controller {
    $this->load->view('c_especialista', $data);
  }
 
- function guardar(){
-
-
-  $this->load->library('form_validation');
-  // field name, error message, validation rules
-  $this->form_validation->set_rules('nombre', 'El nombre ', 'trim|required|min_length[4]|xss_clean');
-  $this->form_validation->set_rules('apellido', 'El apellido', 'trim|required|min_length[4]|xss_clean');
-  $this->form_validation->set_rules('ci_especialista', 'ci_especialista', 'trim|required|min_length[4]|xss_clean');
- 
-  if($this->form_validation->run() == FALSE)
-  {
-   $this->index();
-  }
-  else
-  {
+function guardar(){
 
     $ci_especialista = $this->input->post('ci_especialista');
 
@@ -71,7 +57,6 @@ class Especialista_controller extends CI_Controller {
      $this->load->view('menu_navegacion_admin', $data);
      $this->load->view('especialista_cargado');
    }
-  }
 
  }
 
