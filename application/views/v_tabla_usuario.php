@@ -42,11 +42,24 @@ $(document).ready( function() {
                             
                        </select>
                   </div>
+																	
+																	<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" > 
+
                     <div class="row col-sm-1"> 
                         <button type="submit" value='login' name="datos" class="btn btn-success" > <span class="glyphicon glyphicon glyphicon-search"> </span></button>
                     </div>
                 </form>
                 <form action="<?php echo base_url(); ?>especialista_controller/tabla">
+																	
+																	<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" > 
+
+																	
                     <div class="col-sm-1 col-md-offset-1" style="margin-top:-3%"> 
                             <button type="submit" value='login' name="datos" class="btn btn-danger" > Limpiar </button>
                     </div>
