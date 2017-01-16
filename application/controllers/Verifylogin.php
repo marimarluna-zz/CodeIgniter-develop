@@ -6,6 +6,7 @@ class VerifyLogin extends CI_Controller {
  {
    parent::__construct();
    $this->load->helper('url', 'form');
+   $this->load->librarie('session');
    $this->load->model('user','',TRUE);
 
  }
@@ -35,7 +36,6 @@ class VerifyLogin extends CI_Controller {
  function check_database($password)
  {
    //Field validation succeeded.  Validate against database
-  $this->load->library('session'); 
 		$usuario = $this->input->post('usuario');
  
    //query the database
