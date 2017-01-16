@@ -28,69 +28,12 @@
         <li> <a href="<?=base_url().'home'?>"><img style="max-width: 100px; margin-top: 7%; margin-left: -15%"
              src="<?=base_url().'assents/img/nhisres100.png'?>"></a></li>  
         <!-- <li style="margin-top: 7%; font-size: 24" ><a href="<?php echo base_url();?>usuarios_controller" >Mi Perfil</a></li> -->
-        <div class="container">
-        <div class="row col-sm-2">
-            <form action="<?php echo base_url(); ?>especialista_controller" method="POST">
-              <div class="col-sm-4 col-md-offset-4 " >
-                 <button class="btn btn-lg btn-success" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Registrar Especialista </button>
-		 <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-              </div>
-            </form>
-            </div>
-	<div class="row col-sm-2">
-            <form action="<?php echo base_url(); ?>especialista_controller" method="POST">
-              <div class="col-sm-4 col-md-offset-4 " >
-                 <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Registrar Especialista </button>
-		 <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-              </div>
-            </form>
-            </div>
-		
-		
-		<div class="row col-sm-2">
-            <form action="<?php echo base_url(); ?>especialista_controller" method="POST">
-              <div class="col-sm-4 col-md-offset-4 " >
-                 <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Registrar Especialista </button>
-		 <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-              </div>
-            </form>
-            </div>
-		
-		<div class="row col-sm-2">
-            <form action="<?php echo base_url(); ?>especialista_controller" method="POST">
-              <div class="col-sm-4 col-md-offset-4 " >
-                 <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Registrar Especialista </button>
-		 <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-              </div>
-            </form>
-            </div>
-		
-		<div class="row col-sm-2">
-            <form action="<?php echo base_url(); ?>especialista_controller" method="POST">
-              <div class="col-sm-4 col-md-offset-4 " >
-                 <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Registrar Especialista </button>
-		 <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-		 <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-              </div>
-            </form>
-            </div>
-      </div>     
-
-		  
+        <li style="margin-top: 2%; font-size: 20" ><a href="<?php echo base_url();?>especialista_controller">Crear Especialista</a></li>
+        <li style="margin-top: 2%; font-size: 20" ><a href="<?php echo base_url();?>administrador_controller">Crear Administrador</a></li>
+        <li style="margin-top: 2%; font-size: 20" ><a href="<?php echo base_url();?>especialista_controller/tabla">Lista Especialista</a></li>
+        <li style="margin-top: 2%; font-size: 20" ><a href="<?php echo base_url();?>administrador_controller/tabla">Lista Administrador</a></li>
+        <li style="margin-top: 2%; font-size: 20" ><a href="<?php echo base_url();?>usuario_controller/tabla">Buscar Usuarios</a></li>
+        
       </ul>
     </div>
 
