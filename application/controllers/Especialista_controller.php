@@ -135,9 +135,13 @@ function buscar(){
 
         $data['pagination'] = $this->pagination->create_links();
 
-           $session_data = $this->session->userdata('logged_in');
-           $data['username'] = $session_data['username'];
-           $data['id'] = $session_data['id'];
+       $data['username'] = $this->input->post('usuario');
+							$data['password'] = $this->input->post('clave');
+							$data['perfil'] = $this->input->post('perfil');
+								$data['id'] = $this->input->post('id');
+									// $session_data = $this->session->userdata('logged_in');
+         //  $data['username'] = $session_data['username'];
+          // $data['id'] = $session_data['id'];
 
         //load the department_view
         $this->load->view('menu_navegacion_admin', $data);
