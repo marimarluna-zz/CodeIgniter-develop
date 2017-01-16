@@ -50,7 +50,7 @@ $(document).ready( function() {
 							  <input type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 							  <input type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
                 </form>
-                <form action="<?php echo base_url(); ?>especialista_controller/tabla">
+                <form action="<?php echo base_url(); ?>especialista_controller/tabla" method="POST">
                     <div class="col-sm-1 col-md-offset-1" style="margin-top:-3%"> 
                             <button type="submit" value='login' name="datos" class="btn btn-danger" > Limpiar </button>
                     </div>
