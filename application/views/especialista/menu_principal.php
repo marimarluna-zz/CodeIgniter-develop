@@ -28,7 +28,7 @@
 
       <div class="container">
         <div class="row">
-            <form action="<?php echo base_url(); ?>paciente_controller/tabla">
+            <form action="<?php echo base_url(); ?>paciente_controller/tabla" method="POST">
               <div class="col-sm-4 col-md-offset-4 " >
                  <button class="btn btn-lg btn-danger btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Busqueda de Pacientes </button>
              				<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
@@ -44,7 +44,7 @@
 
       <div class="container">
         <div class="row">
-            <form action="<?php echo base_url(); ?>paciente_controller">
+            <form action="<?php echo base_url(); ?>paciente_controller" method="POST">
               <div class="col-sm-4 col-md-offset-4 " >
                  <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Registrar Paciente </button>
 																<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
