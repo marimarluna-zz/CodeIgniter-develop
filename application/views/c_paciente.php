@@ -89,7 +89,12 @@ form {float:right;}
                 <label>Dirección</label>
                 <input type="text" id="direccion" name="direccion" placeholder="Direccion" class="form-control">
               </div>
+								
               </div>
+								<input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
               </div>
 
               <br><br>
