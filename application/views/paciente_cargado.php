@@ -39,9 +39,6 @@
       <div class="container">
         <div class="row">
             <form action="<?php echo base_url(); ?>paciente_controller/ver"  method="POST">
-		    <div class="" style="display:none">
-                      <input type="text" min="1" id="ci_paciente" name="ci_paciente" value="<?php echo $dato->ci_paciente;?>" class="form-control col-sm-2"> 
-                                    </div>
               <div class="col-sm-4 col-md-offset-4 " >
                  <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Agregar Informe </button>
 															<input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
