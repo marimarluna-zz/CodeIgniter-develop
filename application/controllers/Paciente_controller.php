@@ -56,10 +56,9 @@ class Paciente_controller extends CI_Controller {
        $data['password'] = $this->input->post('clave');
        $data['perfil'] = $this->input->post('perfil');
        $data['id'] = $this->input->post('id');
-     $dato = $this->input->post('ci_paciente');
-
+     
      $this->load->view('menu_navegacion_espe', $data);
-     $this->load->view('paciente_cargado', $dato);
+     $this->load->view('paciente_cargado');
    }
   
 
