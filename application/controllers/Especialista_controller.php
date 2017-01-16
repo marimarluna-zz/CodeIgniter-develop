@@ -35,9 +35,10 @@ function guardar(){
 
   if ($query -> num_rows() != 0 ){
 
-   $session_data = $this->session->userdata('logged_in');
-   $data['username'] = $session_data['username'];
-   $data['id'] = $session_data['id'];
+  $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
    
    $data['error'] = "Ya existe un especialista con esa cedula";
 
@@ -49,9 +50,10 @@ function guardar(){
      $this->load->model('especialista_model');
      $this->especialista_model->guardar();
 
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-     $data['id'] = $session_data['id'];
+    $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
      
 
      $this->load->view('menu_navegacion_admin', $data);
