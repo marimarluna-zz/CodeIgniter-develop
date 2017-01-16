@@ -31,9 +31,9 @@
             <form action="<?php echo base_url(); ?>especialista_controller/tabla">
               <div class="col-sm-4 col-md-offset-4 " >
                  <button class="btn btn-lg btn-danger btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Busqueda de Especialistas </button>
-		 <input type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-		 <input type="text" id="clave" name="clave" value="<?php echo $clave; ?>"  class="form-control" >
-		 <input type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+		 <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+		 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $clave; ?>"  class="form-control" >
+		 <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
               </div>
             </form>
             </div>
