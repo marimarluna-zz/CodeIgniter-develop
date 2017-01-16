@@ -88,8 +88,10 @@ function buscar(){
   $data['datos'] = $this->especialista_model->buscar(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
   $data1['datos1'] = $this->especialista_model->buscar();
 
-  $session_data = $this->session->userdata('logged_in');
-  $data['username'] = $session_data['username'];
+  $data['usuario'] = $this->input->post('usuario');
+  $data['password'] = $this->input->post('clave');
+  $data['perfil'] = $this->input->post('perfil');
+  $data['id'] = $this->input->post('id');
 
   $this->load->view('menu_navegacion_admin',$data);
   
