@@ -70,7 +70,7 @@ class VerifyLogin extends CI_Controller {
   $clave = $this->input->post('password');
   
   $query = $this->db->select('*')
-                      ->from('user')
+                      ->from('users')
                       ->where('username', $nombre)
                       ->where('password', $clave)
                       ->get();
