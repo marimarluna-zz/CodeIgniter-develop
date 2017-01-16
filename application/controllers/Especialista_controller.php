@@ -135,7 +135,7 @@ function buscar(){
 
         $data['pagination'] = $this->pagination->create_links();
 
-       $data['username'] = $this->input->post('usuario');
+       $data['usuario'] = $this->input->post('usuario');
 							$data['password'] = $this->input->post('clave');
 							$data['perfil'] = $this->input->post('perfil');
 								$data['id'] = $this->input->post('id');
