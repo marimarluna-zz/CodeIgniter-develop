@@ -63,6 +63,34 @@ class VerifyLogin extends CI_Controller {
      return false;
    }
  }
+	
+	
+	 function entrar(){
+
+  $nombre = $this->input->post('usuario');
+  $clave = $this->input->post('password');
+  
+  $query = $this->db->select('*')
+                      ->from('user')
+                      ->where('username', $nombre)
+                      ->where('password', $clave)
+                      ->get();
+  $sql = $query->row();
+
+
+  if ($query -> num_rows() != 0 ) {
+
+    redirect('home', 'refresh');
+
+  } else {
+
+    $data['error'] = "Error al cargar los datos";
+     $this->load->view('login', $data);
+
+  }
+
+ }
+
 
 
 }
