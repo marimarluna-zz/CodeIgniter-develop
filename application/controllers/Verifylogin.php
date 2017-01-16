@@ -40,14 +40,19 @@ class VerifyLogin extends CI_Controller {
    //query the database
    $result = $this->user->login($usuario, $password);
  
-   if($result)
+  if($result)
    {
-    session_start();
-
-     $_SESSION['perfil'] = $result->perfil[0];
-     $_SESSION['id'] = $result->id[0];
-     $_SESSION['username'] = $result->username[0];
-     
+     $sess_array = array();
+     foreach($result as $row)
+     {
+       $sess_array = array(
+         'perfil' => $row->perfil,
+         'id' => $row->id,
+         'username' => $row->username
+         
+       );
+       $this->session->set_userdata('logged_in', $sess_array);
+     }
      return TRUE;
    }
    else
