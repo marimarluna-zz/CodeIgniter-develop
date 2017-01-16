@@ -27,7 +27,7 @@ class Especialista_controller extends CI_Controller {
     $data['usuario'] = $this->input->post('usuario');
        $data['password'] = $this->input->post('clave');
        $data['perfil'] = $this->input->post('perfil');
-       $data['id'] = $this->input->post('id');ean');
+       $data['id'] = $this->input->post('id');
  
  
     $ci_especialista = $this->input->post('ci_especialista');
