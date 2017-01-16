@@ -32,7 +32,7 @@
               <div class="col-sm-4 col-md-offset-4 " >
                  <button class="btn btn-lg btn-danger btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Busqueda de Pacientes </button>
              				<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-																 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $clave; ?>"  class="form-control" >
+																 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 		 														<input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 																 <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" > 
 													</div>
@@ -48,7 +48,7 @@
               <div class="col-sm-4 col-md-offset-4 " >
                  <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Registrar Paciente </button>
 																<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-																 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $clave; ?>"  class="form-control" >
+																 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 		 														<input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 																 <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" > 
               </div>
