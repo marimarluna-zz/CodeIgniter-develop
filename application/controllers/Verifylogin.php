@@ -80,9 +80,9 @@ class VerifyLogin extends CI_Controller {
   if ($query -> num_rows() != 0 ) {
 
     $data['error'] = "Bienvenido ";
-    $data['usuario'] = $sql->usuario;
+    $data['usuario'] = $sql->username;
     $data['perfil'] = $sql->perfil;
-    $data['clave'] = $sql->clave;
+    $data['clave'] = $sql->password;
     $val = $sql->perfil;
 	  
      if($val == 'Administrador'){
