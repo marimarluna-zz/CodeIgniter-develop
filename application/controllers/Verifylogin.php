@@ -83,6 +83,7 @@ class VerifyLogin extends CI_Controller {
     $data['usuario'] = $sql->username;
     $data['perfil'] = $sql->perfil;
     $data['clave'] = $sql->password;
+    $data['id'] = $sql->id;  
     $val = $sql->perfil;
 	  
      if($val == 'Administrador'){
