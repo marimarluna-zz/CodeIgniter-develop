@@ -13,10 +13,13 @@ class Home extends CI_Controller {
  	if($this->session->userdata('logged_in'))
    {
 
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-  
-     $val = $session_data['perfil'];
+     $this->load->helper(array('form'));
+	  $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+			
+     $val = $data['perfil'];
 
      $data['error'] = "Bienvenido ";
 
