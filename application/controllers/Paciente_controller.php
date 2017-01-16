@@ -25,19 +25,6 @@ class Paciente_controller extends CI_Controller {
  function guardar(){
 
 
-  $this->load->library('form_validation');
-  // field name, error message, validation rules
-  $this->form_validation->set_rules('nombre', 'El nombre ', 'trim|required|min_length[4]|xss_clean');
-  $this->form_validation->set_rules('apellido', 'El apellido', 'trim|required|min_length[4]|xss_clean');
-  $this->form_validation->set_rules('ci_paciente', 'La cedula', 'trim|required|min_length[4]|xss_clean');
- 
-  if($this->form_validation->run() == FALSE)
-  {
-   $this->index();
-  }
-  else
-  {
-
     $ci_paciente = $this->input->post('ci_paciente');
 
     $query = $this->db->select('*')
@@ -65,7 +52,7 @@ class Paciente_controller extends CI_Controller {
      $this->load->model('paciente_model');
      $this->paciente_model->guardar();
 
-						 $data['usuario'] = $this->input->post('usuario');
+             $data['usuario'] = $this->input->post('usuario');
        $data['password'] = $this->input->post('clave');
        $data['perfil'] = $this->input->post('perfil');
        $data['id'] = $this->input->post('id');
@@ -74,7 +61,7 @@ class Paciente_controller extends CI_Controller {
      $this->load->view('menu_navegacion_espe', $data);
      $this->load->view('paciente_cargado');
    }
-  }
+  
 
  }
 
