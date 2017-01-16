@@ -67,7 +67,7 @@ return $query->result(), $query2->result();
         $filtro = $this->input->post('filtro');
 
 
-        $sql = 'select * from `users` = `'.$filtro.'` = "'.$campo.'"  order by nombre limit ' . $start . ', ' . $limit;
+        $sql = 'select * from `users` WHERE `'.$filtro.'` = "'.$campo.'"  order by nombre limit ' . $start . ', ' . $limit;
         $query = $this->db->query($sql);
         return $query->result();
     }
