@@ -12,7 +12,9 @@ function __construct()
   $data['usuario'] = $this->input->post('usuario');
        $data['password'] = $this->input->post('clave');
        $data['perfil'] = $this->input->post('perfil');
-       $data['id'] = $this->input->post('id');
+       $data['id'] = $this->input->post('id');.
+				 
+				 $ci_paciente = $this->input->post('ci_paciente');
 
   $query =  $this->db->query(' SELECT * FROM `paciente` WHERE ci_paciente="'.$ci_paciente.'"');
   $sql = $query->row();
