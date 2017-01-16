@@ -33,7 +33,19 @@
         <li style="margin-top: 2%; font-size: 20" ><a href="<?php echo base_url();?>especialista_controller/tabla">Lista Especialista</a></li>
         <li style="margin-top: 2%; font-size: 20" ><a href="<?php echo base_url();?>administrador_controller/tabla">Lista Administrador</a></li>
         <li style="margin-top: 2%; font-size: 20" ><a href="<?php echo base_url();?>usuario_controller/tabla">Buscar Usuarios</a></li>
-        
+        <li style="margin-top: 2%; font-size: 20" >
+			
+			<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" > 
+
+                    <div class="col-sm-1 col-md-offset-1" style="margin-top:-3%"> 
+                            <button type="submit" value='login' name="datos" class="btn btn-danger" > Limpiar </button>
+                    </div>
+		  
+		</li>
+		  
       </ul>
     </div>
 
