@@ -100,7 +100,7 @@ function buscar(){
   public function tabla()
     {
         //pagination settings
-        $config['base_url'] = site_url('especialista_controller/tabla');
+        $config['base_url'] = site_url('Especialista_controller/tabla');
         $config['total_rows'] = $this->db->count_all('especialista');
         $config['per_page'] = "7";
         $config["uri_segment"] = 3;
