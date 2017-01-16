@@ -42,6 +42,12 @@ class VerifyLogin extends CI_Controller {
  
    if($result)
    {
+    session_start();
+
+     $_SESSION['perfil'] = $result->perfil[0];
+     $_SESSION['id'] = $result->id[0];
+     $_SESSION['username'] = $result->username[0];
+     
      return TRUE;
    }
    else
