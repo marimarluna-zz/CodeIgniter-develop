@@ -19,7 +19,9 @@ function __construct()
 
   public function guardar(){
 
-    $ci_administrador = $this->input->post('ci_administrador');  
+    
+    $ci_especialista =$this->input->post('n')."".$this->input->post('ci_especialista');
+    $perfil = 'Administrador';   
 
   $data=array(
     
