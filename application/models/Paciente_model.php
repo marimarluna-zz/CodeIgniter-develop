@@ -27,7 +27,7 @@ function __construct()
 
   public function guardar(){
 
-    $ci_paciente = $this->input->post('ci_paciente');
+    $ci_paciente =  $this->input->post('n')."".$this->input->post('ci_paciente');
 
   $data=array(
     
