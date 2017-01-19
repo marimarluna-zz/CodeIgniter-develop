@@ -73,6 +73,11 @@ form {float:right;}
                <div class="col-sm-12 col-md-offset-2 form-group">
                 <div class="col-sm-4 form-group">
                 <label>Cedula</label>
+			 <select name="n" id="n">
+                  <option value="" >Seleccione</option>
+                  <option value="V" >V</option>
+                  <option value="E" >E</option>
+                </select>
                 <input type="number" min="0" id="ci_paciente" name="ci_paciente" placeholder="Cedula" class="form-control">
               </div>
               <div class="col-sm-4 form-group">
