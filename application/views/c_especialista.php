@@ -72,7 +72,7 @@ form {float:right;}
                <div class="col-sm-12 col-md-offset-2 form-group">
                 <div class="col-sm-4 form-group">
                 <label>Cedula</label>
-			 <select name="n" id="n">
+			 <select name="n" id="n" class="form-control">
                   <option value="" >Seleccione</option>
                   <option value="V" >V</option>
                   <option value="E" >E</option>
