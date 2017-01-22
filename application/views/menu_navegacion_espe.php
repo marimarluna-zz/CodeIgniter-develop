@@ -25,7 +25,18 @@
             <li><a href="#">Services</a></li>
             <li><a href="#">Works</a></li>
             <li><a href="#" class="btn btn-default">I'm a link button!</a></li>
-            <li><a href="#">Contact</a></li>
+            <li>
+						
+								<form name="form_prueba" action="<?= base_url().'login/eliminar'?>" method="POST">
+                                    <div class="" style="display:none">
+                                        <input type="text" id="id" name="id" class="form-control col-sm-2"> 
+                                    </div>
+                                    <div class="row col-sm-3" style="margin-left:5%"> 
+                                        <button type="submit" value='login' name="datos" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"> </span></button>
+                                    </div>
+                                </form>
+						
+						</li>
             <li>
               <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Categories</a>
             </li>
