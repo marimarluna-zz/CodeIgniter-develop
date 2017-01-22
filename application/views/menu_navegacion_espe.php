@@ -81,7 +81,7 @@
 		</form>		
 		    </div>
 		    <div class="col-sm-1">	 
-		    	<h5><a><b><span class="glyphicon glyphicon-user"></span> <?php echo $usuario; ?></b></a></h5>
+		    	<a><b><span class="glyphicon glyphicon-user"></span> <?php echo $usuario; ?></b></a>
 		    </div>
 		    <div class="col-sm-1">
 			<a href="<?php echo base_url(); ?>login"><b><span class="glyphicon glyphicon-share-alt"></span>Salir</b></a>    
