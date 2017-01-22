@@ -27,13 +27,13 @@
             <li><a href="#" class="btn btn-default">I'm a link button!</a></li>
             <li>
 						
-								<form name="form_prueba" action="<?= base_url().'login/eliminar'?>" method="POST">
+								<form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
                                     <div class="" style="display:none">
                                         <input type="text" id="id" name="id" class="form-control col-sm-2"> 
                                     </div>
-                                    <div class="row col-sm-3" style="margin-left:5%"> 
-                                        <button type="submit" value='login' name="datos" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"> </span></button>
-                                    </div>
+                                    
+                                        <button type="submit" value='login' name="datos" class="btn btn-danger">Buscar Paciente</button>
+                                    
                                 </form>
 						
 						</li>
