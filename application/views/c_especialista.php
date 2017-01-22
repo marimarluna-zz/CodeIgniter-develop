@@ -57,10 +57,7 @@ form {float:right;}
         <form>
           <div class="col-sm-12">
             <div class="row">
-		    <div>
 		 	<label>Nombre</label>
-		 </div>
-		 <br>
               <div class="col-sm-4 col-md-offset-2 form-group">
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control">
               </div>
@@ -71,9 +68,11 @@ form {float:right;}
             </div>
               <div class="row">
 		      
-              <div class="col-sm-12 col-md-offset-2 form-group">
+
                <label>Cedula</label>
-	      <div class="col-sm-1 form-group">
+	       <label>Telefono</label>
+	       <br>
+
              
 	      <select name="n" id="n" class="form-control">
 		      <option value="V" >V</option>
@@ -84,7 +83,7 @@ form {float:right;}
                 <input type="number" min="0" id="ci_especialista" name="ci_especialista" placeholder="Cedula" class="form-control">
 	      </div>
               <div class="col-sm-4 form-group">
-                <label>Telefono</label>
+               
                 <input type="text" id="telefono" name="telefono" placeholder="Telefono" class="form-control">
               </div> 
                 </div>
