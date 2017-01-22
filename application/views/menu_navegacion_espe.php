@@ -55,38 +55,43 @@
 		
 		
           <ul class="nav navbar-nav navbar-left">
-            <li><a href="#">Home</a></li>
-            <li><form name="form_prueba" action="<?= base_url().'Paciente_controller'?>" method="POST">
-		    
-			<input style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-			<input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-			<input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-			<input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-		    
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Crear Paciente</button>    
-		</form></li>
-            <li><form name="form_prueba" action="<?= base_url().'paciente_controller/tabla'?>" method="POST">
-		  <input style = "display:none"  type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-		  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-		  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-		  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Lista de pacientes</button>    
-		</form></li>
-            <li>			
-		<form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+            <div class="row col-sm-12">
+		    <div class="col-sm-3">
+			    <form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
 			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
-		</form>				
-	    </li>
-	    <li>
-		<h5><a><b><span class="glyphicon glyphicon-user"></span> <?php echo $usuario; ?></b></a></h5>
-	    </li>
-	    <li>
-	        <a href="<?php echo base_url(); ?>login"><b>Salir <span class="glyphicon glyphicon-share-alt"></span></b></a>
-	    </li>
+		</form>		
+		    </div>
+		    <div class="col-sm-3">
+			    <form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
+		</form>		
+		    </div>
+		    <div class="col-sm-3">
+			    <form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
+		</form>		
+		    </div>
+		    <div class="col-sm-3">
+			    <form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
+		</form>		
+		    </div>
+	    </div>
           </ul>
+		
+		
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
     </nav><!-- /.navbar -->
