@@ -21,19 +21,39 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Works</a></li>
-            <li><a href="#" class="btn btn-default">I'm a link button!</a></li>
+            <li><form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
+		    <div class="" style="display:none">
+			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
+		    </div>
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-default">Buscar Paciente</button>    
+		</form></li>
+            <li><form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
+		    <div class="" style="display:none">
+			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
+		    </div>
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
+		</form></li>
+            <li><form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
+		    <div class="" style="display:none">
+			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
+		    </div>
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-success">Buscar Paciente</button>    
+		</form></li>
             <li>
-						
+	       <form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
+		       <div class="" style="display:none">
+			   <input type="text" id="id" name="id" class="form-control col-sm-2"> 
+		       </div>
+		       <button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-warning">Buscar Paciente</button>    
+	       </form>
+	    </li>
+            <li>			
 		<form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
 		    <div class="" style="display:none">
 			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
 		    </div>
 			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-danger">Buscar Paciente</button>    
-		</form>
-						
+		</form>				
 	    </li>
             <li>
               <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Categories</a>
