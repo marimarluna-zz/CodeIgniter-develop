@@ -57,8 +57,11 @@ form {float:right;}
         <form>
           <div class="col-sm-12">
             <div class="row">
+		    <div>
+		 	<label>Nombre</label>
+		 </div>
+		 <br>
               <div class="col-sm-4 col-md-offset-2 form-group">
-                <label>Nombre</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control">
               </div>
               <div class="col-sm-4 form-group">
