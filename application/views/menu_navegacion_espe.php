@@ -80,12 +80,11 @@
 			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
 		</form>		
 		    </div>
-		    <div class="col-sm-3">
-			 <li>
-				<h5><a><b><span class="glyphicon glyphicon-user"></span> <?php echo $usuario; ?></b></a></h5>
-			    
-				<a href="<?php echo base_url(); ?>login"><b>Salir <span class="glyphicon glyphicon-share-alt"></span></b></a>
-			    </li>
+		    <div class="col-sm-1">	 
+		    	<h5><a><b><span class="glyphicon glyphicon-user"></span> <?php echo $usuario; ?></b></a></h5>
+		    </div>
+		    <div class="col-sm-1">
+			<a href="<?php echo base_url(); ?>login"><b>Salir <span class="glyphicon glyphicon-share-alt"></span></b></a>    
 		    </div>
 	    </div>
           </ul>
