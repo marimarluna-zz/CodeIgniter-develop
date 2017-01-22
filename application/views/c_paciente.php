@@ -15,6 +15,13 @@ $(document).ready( function() {
       });
 //-->
 </script> 
+	  
+	 
+	  <script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+	 
 
     <title>Paciente</title>
 
@@ -44,7 +51,7 @@ form {float:right;}
 
   <br>
   
-  <div class"row">
+  <div class="row">
 
     <div class ="col-md-5" class="container">
       <?php echo validation_errors(); ?>
@@ -60,31 +67,32 @@ form {float:right;}
             <div class="row">
               <div class="col-sm-4 col-md-offset-2 form-group">
                 <label>Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control">
+                <input type="text" id="nombre" onkeyup="this.value=this.value.replace(/[^a-z A-ZñÑ]/g,'');" name="nombre" placeholder="Nombre" class="form-control">
               </div>
               <div class="col-sm-4 form-group">
                 <label>Apellido</label>
-                <input type="text" id="apellido" name="apellido" placeholder="Apellido" class="form-control">
+                <input type="text" id="apellido" onkeyup="this.value=this.value.replace(/[^a-z A-ZñÑ]/g,'');" name="apellido" placeholder="Apellido" class="form-control">
               </div> 
             </div>
-              <div class="row">
+               <div class="row">
+		      
 
-               <div class="col-sm-12">
-               <div class="col-sm-12 col-md-offset-2 form-group">
-                <div class="col-sm-4 form-group">
-                <label>Cedula</label>
-			 <select name="n" id="n">
-                  <option value="" >Seleccione</option>
-                  <option value="V" >V</option>
-                  <option value="E" >E</option>
-                </select>
+               <label style="margin-left:18%">Cedula</label>
+	       <label style="margin-left:30%">Telefono</label>
+	       <br>
+              <div class="col-sm-1 col-sm-offset-2 form-group">
+	      <select name="n" id="n" class="form-control">
+		      <option value="V" >V</option>
+		      <option value="E" >E</option>
+              </select>
+	      </div>
+	      <div class="col-sm-3 form-group">
                 <input type="number" min="0" id="ci_paciente" name="ci_paciente" placeholder="Cedula" class="form-control">
-              </div>
+	      </div>
               <div class="col-sm-4 form-group">
-                <label>Telefono</label>
+               
                 <input type="text" id="telefono" name="telefono" placeholder="Telefono" class="form-control">
               </div> 
-                </div>
                 </div>
 
 
