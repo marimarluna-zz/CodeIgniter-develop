@@ -14,7 +14,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo base_url(); ?>login/inicio" >Inicio</a>
+          <form name="form_prueba" action="<?= base_url().'login/inicio'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Inicio</button>    
+		</form>	
         </div>
     
         <!-- Collect the nav links, forms, and other content for toggling -->
