@@ -25,26 +25,26 @@
 		    <div class="" style="display:none">
 			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
 		    </div>
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-default">Buscar Paciente</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
 		</form></li>
             <li><form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
 		    <div class="" style="display:none">
 			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
 		    </div>
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-default">Buscar Paciente</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
 		</form></li>
             <li><form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
 		    <div class="" style="display:none">
 			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
 		    </div>
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-default">Buscar Paciente</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
 		</form></li>
             <li>
 	       <form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
 		       <div class="" style="display:none">
 			   <input type="text" id="id" name="id" class="form-control col-sm-2"> 
 		       </div>
-		       <button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-default">Buscar Paciente</button>    
+		       <button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
 	       </form>
 	    </li>
             <li>			
@@ -52,7 +52,7 @@
 		    <div class="" style="display:none">
 			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
 		    </div>
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-default">Buscar Paciente</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
 		</form>				
 	    </li>
           </ul>
