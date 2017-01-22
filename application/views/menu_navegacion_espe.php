@@ -83,8 +83,7 @@
 		    <div class="col-sm-3">
 			 <li>
 				<h5><a><b><span class="glyphicon glyphicon-user"></span> <?php echo $usuario; ?></b></a></h5>
-			    </li>
-			    <li>
+			    
 				<a href="<?php echo base_url(); ?>login"><b>Salir <span class="glyphicon glyphicon-share-alt"></span></b></a>
 			    </li>
 		    </div>
