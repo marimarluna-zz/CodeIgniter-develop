@@ -31,7 +31,7 @@
 		    <div class="" style="display:none">
 			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
 		    </div>
-			<button type="submit" value='login' style="margin-top:12%" name="datos" class="btn btn-danger">Buscar Paciente</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-danger">Buscar Paciente</button>    
 		</form>
 						
 	    </li>
