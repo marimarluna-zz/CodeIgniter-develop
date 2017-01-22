@@ -31,20 +31,20 @@
 		    <div class="" style="display:none">
 			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
 		    </div>
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-default">Buscar Paciente</button>    
 		</form></li>
             <li><form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
 		    <div class="" style="display:none">
 			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
 		    </div>
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-success">Buscar Paciente</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-default">Buscar Paciente</button>    
 		</form></li>
             <li>
 	       <form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
 		       <div class="" style="display:none">
 			   <input type="text" id="id" name="id" class="form-control col-sm-2"> 
 		       </div>
-		       <button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-warning">Buscar Paciente</button>    
+		       <button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-default">Buscar Paciente</button>    
 	       </form>
 	    </li>
             <li>			
@@ -52,20 +52,9 @@
 		    <div class="" style="display:none">
 			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
 		    </div>
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-danger">Buscar Paciente</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-default">Buscar Paciente</button>    
 		</form>				
 	    </li>
-            <li>
-              <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Categories</a>
-            </li>
-          </ul>
-          <ul class="collapse nav navbar-nav nav-collapse" id="nav-collapse1">
-            <li><a href="#">Web design</a></li>
-            <li><a href="#">Development</a></li>
-            <li><a href="#">Graphic design</a></li>
-            <li><a href="#">Print</a></li>
-            <li><a href="#">Motion</a></li>
-            <li><a href="#">Mobile apps</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
