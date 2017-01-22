@@ -70,8 +70,8 @@ form {float:right;}
               <div class="row">
 		      
 
-               <label style="margin-left:100%">Cedula</label>
-	       <label style="margin-left:120%">Telefono</label>
+               <label style="margin-left:20%">Cedula</label>
+	       <label style="margin-left:40%">Telefono</label>
 	       <br><br>
 
               <div class="col-sm-1 col-sm-offset-2 form-group">
