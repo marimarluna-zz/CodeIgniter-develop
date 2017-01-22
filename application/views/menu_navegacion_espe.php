@@ -14,7 +14,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo base_url(); ?>inicio" >Inicio</a>
+          <a class="navbar-brand" href="<?php echo base_url(); ?>login/inicio" >Inicio</a>
         </div>
     
         <!-- Collect the nav links, forms, and other content for toggling -->
