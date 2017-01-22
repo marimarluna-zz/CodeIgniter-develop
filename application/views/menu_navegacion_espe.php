@@ -27,16 +27,14 @@
             <li><a href="#" class="btn btn-default">I'm a link button!</a></li>
             <li>
 						
-								<form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
-                                    <div class="" style="display:none">
-                                        <input type="text" id="id" name="id" class="form-control col-sm-2"> 
-                                    </div>
-                                    
-                                        <button type="submit" value='login' name="datos" class="btn btn-danger">Buscar Paciente</button>
-                                    
-                                </form>
+		<form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
+		    <div class="" style="display:none">
+			<input type="text" id="id" name="id" class="form-control col-sm-2"> 
+		    </div>
+			<button type="submit" value='login' style="margin-top:3%" name="datos" class="btn btn-danger">Buscar Paciente</button>    
+		</form>
 						
-						</li>
+	    </li>
             <li>
               <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Categories</a>
             </li>
