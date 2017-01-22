@@ -71,9 +71,9 @@ form {float:right;}
 
                <label>Cedula</label>
 	       <label>Telefono</label>
-	       <br>
+	       <br><br>
 
-             
+              <div class="col-sm-1 form-group">
 	      <select name="n" id="n" class="form-control">
 		      <option value="V" >V</option>
 		      <option value="E" >E</option>
