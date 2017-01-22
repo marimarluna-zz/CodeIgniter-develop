@@ -16,6 +16,13 @@ $(document).ready( function() {
 //-->
 </script> 
 
+<script type="text/javascript">
+$('.alphaonly').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z]/g,'') ); }
+);
+</script>
+
     <title>Especialistas</title>
 
 <style type="text/css">
@@ -27,10 +34,11 @@ form {float:right;}
     <link href="<?= base_url().'assents/css/bootstrap.min.css'?>" rel="stylesheet">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript">
-/*funcion ajax que llena el combo dependiendo de la categoria seleccionada*/
 
-</script>
+	  <script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
 
   </head>
   
@@ -60,7 +68,7 @@ form {float:right;}
 		 	
               <div class="col-sm-4 col-sm-offset-2 form-group">
                 <label>Nombre</label>
-		<input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control">
+		<input type="text" id="nombre" onkeyup="this.value=this.value.replace(/[^a-z A-ZñÑ]/g,'');" name="nombre" placeholder="Nombre" class="form-control">
               </div>
               <div class="col-sm-4 form-group">
                 <label>Apellido</label>
