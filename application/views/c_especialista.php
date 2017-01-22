@@ -72,7 +72,7 @@ form {float:right;}
               </div>
               <div class="col-sm-4 form-group">
                 <label>Apellido</label>
-                <input type="text" id="apellido" name="apellido" placeholder="Apellido" class="form-control">
+                <input type="text" id="apellido" onkeyup="this.value=this.value.replace(/[^a-z A-ZñÑ]/g,'');" name="apellido" placeholder="Apellido" class="form-control">
               </div> 
             </div>
               <div class="row">
