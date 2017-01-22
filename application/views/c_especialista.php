@@ -77,8 +77,10 @@ form {float:right;}
                   <option value="V" >V</option>
                   <option value="E" >E</option>
                 </select>
+	       <div class="col-sm-4 form-group">
                 <input type="number" min="0" id="ci_especialista" name="ci_especialista" placeholder="Cedula" class="form-control">
               </div>
+	      </div>
               <div class="col-sm-4 form-group">
                 <label>Telefono</label>
                 <input type="text" id="telefono" name="telefono" placeholder="Telefono" class="form-control">
