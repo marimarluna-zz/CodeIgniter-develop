@@ -44,7 +44,7 @@ form {float:right;}
 
   <br>
   
-  <div class"row">
+  <div class="row">
 
     <div class ="col-md-5" class="container">
       <?php echo form_open('especialista_controller/guardar'); ?>
@@ -57,9 +57,10 @@ form {float:right;}
         <form>
           <div class="col-sm-12">
             <div class="row">
-		 	<label>Nombre</label>
-              <div class="col-sm-4 col-md-offset-2 form-group">
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control">
+		 	
+              <div class="col-sm-4 col-sm-offset-2 form-group">
+                <label>Nombre</label>
+		<input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control">
               </div>
               <div class="col-sm-4 form-group">
                 <label>Apellido</label>
@@ -73,7 +74,7 @@ form {float:right;}
 	       <label>Telefono</label>
 	       <br><br>
 
-              <div class="col-sm-1 form-group">
+              <div class="col-sm-1 col-sm-offset-2 form-group">
 	      <select name="n" id="n" class="form-control">
 		      <option value="V" >V</option>
 		      <option value="E" >E</option>
