@@ -71,7 +71,7 @@ form {float:right;}
 		      
 
                <label style="margin-left:18%">Cedula</label>
-	       <label style="margin-left:36%">Telefono</label>
+	       <label style="margin-left:30%">Telefono</label>
 	       <br>
               <div class="col-sm-1 col-sm-offset-2 form-group">
 	      <select name="n" id="n" class="form-control">
