@@ -70,10 +70,9 @@ form {float:right;}
               <div class="row">
 		      
 
-               <label style="margin-left:20%">Cedula</label>
-	       <label style="margin-left:40%">Telefono</label>
-	       <br><br>
-
+               <label style="margin-left:18%">Cedula</label>
+	       <label style="margin-left:36%">Telefono</label>
+	       <br>
               <div class="col-sm-1 col-sm-offset-2 form-group">
 	      <select name="n" id="n" class="form-control">
 		      <option value="V" >V</option>
