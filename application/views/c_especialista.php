@@ -69,8 +69,9 @@ form {float:right;}
               <div class="row">
 		      
               <div class="col-sm-12 col-md-offset-2 form-group">
-              <div class="col-sm-1 form-group">
-              <label>Cedula</label>
+               <label>Cedula</label>
+	      <div class="col-sm-1 form-group">
+             
 	      <select name="n" id="n" class="form-control">
 		      <option value="V" >V</option>
 		      <option value="E" >E</option>
