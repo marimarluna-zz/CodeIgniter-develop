@@ -30,11 +30,11 @@
 		    
 			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Crear Paciente</button>    
 		</form></li>
-            <li><form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST">
-		    <input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-		  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-		  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-		  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+            <li><form name="form_prueba" action="<?= base_url().'paciente_controller/tabla'?>" method="POST">
+		    <input   type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+		  <input   type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+		  <input   type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+		  <input   type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
 			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Lista de pacientes</button>    
 		</form></li>
             <li>			
