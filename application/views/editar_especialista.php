@@ -69,7 +69,7 @@ $(document).ready( function() {
             </div>
             <div class="col-sm-6">
               <label>Telefono</label>
-              <input type="text" id="telefono" name="telefono" value="<?php echo $datos->telefono; ?>"  class="form-control" required>
+              <input type="number" id="telefono" name="telefono" value="<?php echo $datos->telefono; ?>"  class="form-control" required>
             </div>
           </div>
           <br>
@@ -94,7 +94,15 @@ $(document).ready( function() {
           <div class="row"> 
             <div class="col-sm-8 col-sm-offset-2">
               <label>Especializacion</label>
-              <input type="text" id="especializacion" name="especializacion" value="<?php echo $datos->especializacion; ?>"  class="form-control" required>
+              <select requird class="form-control" name="especializacion" id="especializacion" required="">
+                                  <option disabled="disabled">Especialidades</option>
+                                    <?php 
+                                    foreach($especialidades as $e)
+                                    { 
+                                      echo '<option value="'.$e->nombre.'"> '. $e->nombre . '</option>';
+                                    }
+                                    ?>
+                                  </select>
             </div>
           </div>
           <br>

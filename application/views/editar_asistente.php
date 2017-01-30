@@ -40,7 +40,7 @@ $(document).ready( function() {
     <div class="container">
   <div class="col-lg-8 col-lg-offset-2 well">
 <dir class ="row">
-        <form name="form_porcion" action="<?= base_url().'paciente_controller/editar'?>" method="POST">
+        <form name="form_porcion" action="<?= base_url().'especialista_controller/editar_a'?>" method="POST">
           <div class="row">
 
             <!-- aqui puedes ver como cada uno de los campos en el formulario tomo un registro de la bd con el siguiente comando: <?php echo $datos->campo; ?> sustituyendo lo que dice campo con el campo de la BD  -->
@@ -60,13 +60,15 @@ $(document).ready( function() {
             <div class="col-sm-6">
               <label>Cedula</label>
               <!-- es campo tiene la opcion readonly como propiedad, al ser el identificador del registro no deberias dejar que lo editaran-->
-              <input type="text" id="cedula" readonly name="cedula" value="<?php echo $datos->ci_paciente; ?>"  class="form-control" required>
+              <input type="text" id="cedula" readonly name="cedula" value="<?php echo $datos->cedula; ?>"  class="form-control" required>
             </div>
             <div class="col-sm-6">
               <label>Telefono</label>
               <input type="number" id="telefono" name="telefono" value="<?php echo $datos->telefono; ?>"  class="form-control" required>
             </div>
           </div>
+          <br>
+
           <br>
 					
 					<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
@@ -76,12 +78,12 @@ $(document).ready( function() {
 
           <div class="row"> 
             <div class="col-sm-8 col-sm-offset-2">
-              <label>Direccion</label>
-              <input type="text" id="direccion" name="direccion" value="<?php echo $datos->direccion; ?>"  class="form-control" required>
+              <label>Especialista Asociado</label>
+              <input type="text" readonly id="especialista" name="especialista" value="<?php echo $datos->ci_especialista_asociaciado; ?>"  class="form-control" required>
             </div>
           </div>
           <br>
-
+         
             <br><br>
           <div class="col-sm-offset-4">
                 <button class="btn btn-lg btn-danger" type="submit" value='login' name="datos"> Editar Datos <span class="glyphicon glyphicon-file"></span></button></button>

@@ -21,10 +21,25 @@ $(document).ready(function(){
 
 <body>
 
+<div class="row">
 
-
+<div class="col-sm-2 col-sm-offset-4">
 <button id="prueba" class="btn btn-info" style="margin-left:5%">Formulario para especialista</button>
-<a href="#myModal" class="btn btn-primary" data-toggle="modal">Crear Nueva Receta<span class="glyphicon glyphicon-apple"></span></a>
+</div>
+
+<div class="col-sm-3">
+<form name="form_prueba" action="<?= base_url().'especialista_controller/lista_especialidades'?>" method="POST">
+    <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+    <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+    <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+    <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" > 
+    <div class="row col-sm-3" style="margin-left:5%"> 
+      <button type="submit" value='login' name="datos" class="btn btn-info" >Crear Especialidad</button>
+    </div>
+</form>
+</div>
+
+</div>
 
 
 <div id="mensaje"><h3 align="center"><?=(isset($error))?$error:''?></h3></div>
@@ -146,6 +161,8 @@ $(document).ready(function(){
 							  <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 							  <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
                 </form>
+            
+
             <table class="table table-striped table-hover" cellpadding="60">
                 <thead>
                     <tr>
@@ -165,7 +182,7 @@ $(document).ready(function(){
                         <td><?php echo $deptlist[$i]->ci_especialista; ?></td>
                         <td><?php echo $deptlist[$i]->telefono; ?></td>
                         <td><?php echo $deptlist[$i]->especializacion; ?></td>
-                        <td><div class="col-md-12"> 
+                        <td><div class="col-sm-12"> 
                                 <form name="form_prueba" action="<?= base_url().'especialista_controller/buscar'?>" method="POST">
                                     <div class="" style="display:none">
                                         <input type="text" min="1" id="ci_especialista" name="ci_especialista" value="<?php echo $deptlist[$i]->ci_especialista;?>" class="form-control col-sm-2"> 

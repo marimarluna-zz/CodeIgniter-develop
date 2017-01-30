@@ -159,7 +159,7 @@ $(document).ready(function(){
                         <td><?php echo $deptlist[$i]->telefono; ?></td>
                         <td><?php echo $deptlist[$i]->ci_especialista_asociado; ?></td>
                         <td><div class="col-md-12"> 
-                                <form name="form_prueba" action="<?= base_url().'especialista_controller/buscar'?>" method="POST">
+                                <form name="form_prueba" action="<?= base_url().'paciente_controller/buscar'?>" method="POST">
                                     <div class="" style="display:none">
                                         <input type="text" min="1" id="ci_especialista" name="ci_especialista" value="<?php echo $deptlist[$i]->ci_paciente;?>" class="form-control col-sm-2"> 
                                     </div>

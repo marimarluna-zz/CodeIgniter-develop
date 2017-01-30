@@ -28,9 +28,9 @@
 
       <div class="container">
         <div class="row">
-            <form action="<?php echo base_url(); ?>especialista_controller/tabla" method="POST">
+            <form action="<?php echo base_url(); ?>Administrador_controller/especialistas" method="POST">
               <div class="col-sm-4 col-md-offset-4 " >
-                 <button class="btn btn-lg btn-danger btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Busqueda de Especialistas </button>
+                 <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Administrar especialistas </button>
 		 <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
 		 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 		 <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
@@ -44,9 +44,9 @@
 
       <div class="container">
         <div class="row">
-            <form action="<?php echo base_url(); ?>especialista_controller" method="POST">
+            <form action="<?php echo base_url(); ?>Administrador_controller/asistentes" method="POST">
               <div class="col-sm-4 col-md-offset-4 " >
-                 <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Registrar Especialista </button>
+                 <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Administrar Asistentes </button>
 		 <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
 		 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 		 <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
@@ -60,9 +60,9 @@
 
     <div class="container">
         <div class="row">
-            <form action="<?php echo base_url(); ?>administrador_controller" method="POST">
+            <form action="<?php echo base_url(); ?>Administrador_controller/pacientes" method="POST">
               <div class="col-sm-4 col-md-offset-4 " >
-                 <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Registrar Administrador </button>
+                 <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Administrar Pacientes </button>
 		 <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
 		 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 		 <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >

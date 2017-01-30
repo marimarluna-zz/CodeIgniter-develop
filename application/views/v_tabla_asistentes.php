@@ -152,9 +152,9 @@ $(document).ready(function(){
                         <td><?php echo $deptlist[$i]->telefono; ?></td>
                         <td><?php echo $deptlist[$i]->ci_especialista_asociaciado; ?></td>
                         <td><div class="col-md-12"> 
-                                <form name="form_prueba" action="<?= base_url().'especialista_controller/buscar'?>" method="POST">
+                                <form name="form_prueba" action="<?= base_url().'especialista_controller/buscar_a'?>" method="POST">
                                     <div class="" style="display:none">
-                                        <input type="text" min="1" id="ci_especialista" name="ci_especialista" value="<?php echo $deptlist[$i]->cedula;?>" class="form-control col-sm-2"> 
+                                        <input type="text" min="1" id="cedula" name="cedula" value="<?php echo $deptlist[$i]->cedula;?>" class="form-control col-sm-2"> 
                                     </div>
 					<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
 					<input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
