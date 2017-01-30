@@ -69,6 +69,55 @@ class Paciente_controller extends CI_Controller {
 
  }
 
+
+ function guardar2(){
+
+
+    $ci_paciente = $this->input->post('ci_paciente');
+
+    $query = $this->db->select('*')
+                      ->from('paciente')
+                      ->where('ci_paciente', $ci_paciente)
+                      ->get();
+
+          $sql = $query->row();
+
+
+  if ($query -> num_rows() != 0 ){
+
+    $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+   
+   $data['error'] = "Ya existe un paciente con esa cedula";
+
+   $this->load->view('menu_navegacion_espe', $data);
+   $this->load->view('ci_paciente', $data);
+
+  }else{
+
+     $this->load->model('paciente_model');
+     $this->paciente_model->guardar2();
+
+     $this->load->model('usuario_model');
+     $this->usuario_model->guardar_paciente();
+
+       $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+       $data['ci_paciente'] = $this->input->post('ci_paciente');
+     
+     $this->load->view('menu_navegacion_espe', $data);
+     $this->load->view('paciente_cargado', $data);
+   }
+  
+
+ }
+
+
+
  function editar(){
 
   $this->load->model('paciente_model');
@@ -181,6 +230,54 @@ class Paciente_controller extends CI_Controller {
         //load the department_view
         $this->load->view('menu_navegacion_espe', $data);
         $this->load->view('v_tabla_paciente',$data);
+    }
+
+    public function tabla_paciente()
+    {
+        //pagination settings
+        $config['base_url'] = site_url('paciente_controller/tabla_paciente');
+        $config['total_rows'] = $this->db->count_all('paciente');
+        $config['per_page'] = "20";
+        $config["uri_segment"] = 4;
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+
+        //config for bootstrap pagination class integration
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="prev">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        //call the model function to get the department data
+        $data['deptlist'] = $this->paciente_model->tabla_paciente($config["per_page"], $data['page']);           
+
+        $data['pagination'] = $this->pagination->create_links();
+
+            $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+
+        //load the department_view
+        $this->load->view('menu_navegacion_espe', $data);
+        $this->load->view('v_tabla_paciente2',$data);
     }
 
 public function tabla_informe()

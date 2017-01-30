@@ -75,10 +75,44 @@ class Usuario_controller extends CI_Controller {
      $this->load->view('e_especialista');
  }
 
+ function editar_perfil(){
+
+  $p1 = $this->input->post('password1');
+  $p2 = $this->input->post('password2');
+
+
+  if ($p1 != $p2) {
+    
+    $data['error'] = "Las claves suministradas no son iguales; Intente de nuevo";
+
+    $this->load->model('usuario_model');
+    $data['datos'] = $this->usuario_model->buscar_usuario();
+    
+     $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+
+   $this->load->view('menu_navegacion_espe', $data);
+   $this->load->view('c_usuario', $data);
+
+
+  }else{
+
+  $this->load->model('usuario_model');
+  $this->usuario_model->editar_perfil();
+
+  
+  $this->load->view('login');
+ 
+ }
+
+ }
+
  function buscar(){
 
    $this->load->model('usuario_model');
-   $thisusuario_model->tabla_usuario();
+   $this->usuario_model->tabla_usuario();
 		
 		 $data['usuario'] = $this->input->post('usuario');
        $data['password'] = $this->input->post('clave');
@@ -86,6 +120,22 @@ class Usuario_controller extends CI_Controller {
        $data['id'] = $this->input->post('id');
 
    $this->load->view('v_tabla_usuario', $data);
+
+ }
+
+
+ function buscar_perfil(){
+
+   $this->load->model('usuario_model');
+   $data['datos'] = $this->usuario_model->buscar_usuario();
+    
+     $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+
+   $this->load->view('menu_navegacion_espe', $data);
+   $this->load->view('c_usuario', $data);
 
  }
 
