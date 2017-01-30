@@ -12,49 +12,6 @@
 
  <body>
 
-    <!-- <h1 align="center"><b>Bienvenido</b></h1>
-
-    <h2 align="center">Especialista</h2>
-
-       <DIV align="center" class="col-md-4 col-md-offset-4">
-      <a><img style="max-width: 200px;" src="<?=base_url().'assents/img/0012.png'?>"></a>
-   
-   </DIV>
-
-
-<BR><BR><BR><BR><BR>
-
-
-      <div class="container">
-        <div class="row">
-            <form action="<?php echo base_url(); ?>paciente_controller/tabla" method="POST">
-              <div class="col-sm-4 col-md-offset-4 " >
-                 <button class="btn btn-lg btn-danger btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Busqueda de Pacientes </button>
-             				<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-																 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-		 														<input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-																 <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" > 
-													</div>
-            </form>
-            </div>
-      </div>  
-
-<BR>
-
-      <div class="container">
-        <div class="row">
-            <form action="<?php echo base_url(); ?>paciente_controller" method="POST">
-              <div class="col-sm-4 col-md-offset-4 " >
-                 <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Registrar Paciente </button>
-																<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-																 <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-		 														<input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-																 <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" > 
-              </div>
-            </form>
-            </div>
-      </div> -->
-
 
       <div class="container">
         <div class="col-sm-6" style="margin-top:5%">
@@ -89,7 +46,7 @@
               <a><img style="max-width:200px; margin-left:17%" src="<?=base_url().'assents/img/search.png'?>"></a>
             </div>
             <div class="col-sm-6"  style="margin-top:15%">
-            <form action="<?php echo base_url(); ?>paciente_controller/tabla" method="POST">
+            <form action="<?php echo base_url(); ?>paciente_controller/tabla_paciente" method="POST">
               <div>
                  <button class="btn btn-lg btn-danger btn-block" type="submit" name="submit" value="login"><span class="glyphicon glyphicon-check"></span> Busqueda de Pacientes </button>
                     <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >

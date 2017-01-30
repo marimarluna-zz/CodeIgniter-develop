@@ -38,7 +38,7 @@
 							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-			<button type="submit" value='login' style="margin-top:-1%; position:absolute" name="datos" class="btn btn-info"><img src="<?=base_url().'assents/img/nhisres100.png'?>" style="max-width:65px"></button>    
+			<button type="submit" value='login' style="margin-top:-1%; position:absolute" name="datos" class="btn btn-link"><img src="<?=base_url().'assents/img/nhisres100.png'?>" style="max-width:65px"></button>    
 		</form>	
         </div>
     
@@ -48,19 +48,19 @@
           <ul class="nav navbar-nav navbar-right">
             <div class="row col-sm-12">
 		    <div class="col-sm-3">
-			    <form name="form_prueba" action="<?= base_url().'Paciente_controller'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+			    <form name="form_prueba" action="<?= base_url().'Paciente_controller'?>" method="POST" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn-link">Crear Paciente</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-link">Crear Paciente</button>    
 		</form>		
 		    </div>
 		    <div class="col-sm-3">
-			    <form name="form_prueba" action="<?= base_url().'paciente_controller/tabla'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+			    <form name="form_prueba" action="<?= base_url().'paciente_controller/tabla_paciente'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Lista de Pacientes</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-link">Lista de Pacientes</button>    
 		</form>		
 		    </div>
 		    <div class="col-sm-3">
@@ -68,11 +68,28 @@
 							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Buscar Paciente</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-link">Buscar Paciente</button>    
 		</form>		
 		    </div>
-		    <div class="col-sm-1">	 
-			    <h5><a><b><span class="glyphicon glyphicon-user"></span> <?php echo $usuario; ?></b></a></h5>
+		    <div class="col-sm-2">	 
+
+
+			    <form name="form_prueba" action="<?= base_url().'usuario_controller/buscar_perfil'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+					<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-link"><span class="glyphicon glyphicon-user"></span> <?php echo $usuario; ?></button>    
+				</form>	
+
+
+
+
+
+
+
+
+
+
 		    </div>
 		    <div class="col-sm-1">
 			<h5><a href="<?php echo base_url(); ?>login"><b><span class="glyphicon glyphicon-share-alt"></span>Salir</b></a></h5>    

@@ -55,7 +55,7 @@ form {float:right;}
 
     <div class ="col-md-5" class="container">
       <?php echo validation_errors(); ?>
-      <?php echo form_open('paciente_controller/guardar'); ?>
+      <?php echo form_open('paciente_controller/guardar2'); ?>
     </div>
 
 
