@@ -11,54 +11,86 @@ function __construct()
 
    $id = $this->input->post('id');
   
-  $query = $this->db->query(' SELECT * FROM `users` WHERE id = "'.$id.'"');
+  $query = $this->db->query(' SELECT * FROM `users`');
     $sql = $query->row();
   return $sql;
 
   }
 
-  public function guardar(){
+  public function especialidades(){
+  
+    $query = $this->db->select('*')
+                      ->from('especialidades')
+                      ->get();
+    $sql = $query->result();
+  
+  return $sql;
+  
+  }
 
-    $id = $this->input->post('id');
+  public function especialistas(){
+  
+    $query = $this->db->select('*')
+                      ->from('especialista')
+                      ->get();
+    $sql = $query->result();
+  
+  return $sql;
+  
+  }
+
+
+  public function guardar_especialista(){
+
+
 
   $data=array(
     
-    'id'=>$id,
-    'perfil'=>$this->input->post('perfil'),
-    'username'=>$this->input->post('username'),
-    'password'=>$this->input->post('password'),
+    'id'=>$this->input->post('ci_especialista'),
+    'perfil'=>'Especialista',
+    'username'=>$this->input->post('nombre'),
+    'password'=>$this->input->post('ci_especialista'),
     
   );
-  $this->db->insert('Usuario',$data);
+  $this->db->insert('users',$data);
 }
 
-/*function editar($id){
-
-$sql = 'select * from `especialista` where ci_especialista ='. $id.' limit = 1'
-$query = $this->db->query($sql);
-
-$sql2 = 'select * from `users` where id ='. $id.' limit = 1'
-$query2 = $this->db->query($sql2);
-
-return $query->result(), $query2->result();
-} */
+public function guardar_asistente(){
 
 
- function tabla_p($limit, $start)
+
+  $data=array(
+    
+    'id'=>$this->input->post('ci_asistente'),
+    'perfil'=>'Asistente',
+    'username'=>$this->input->post('nombre'),
+    'password'=>$this->input->post('ci_asistente'),
+    
+  );
+  $this->db->insert('users',$data);
+}
+
+public function guardar_paciente(){
+
+  $data=array(
+    
+    'id'=>$this->input->post('ci_paciente'),
+    'perfil'=>'Paciente',
+    'username'=>$this->input->post('nombre'),
+    'password'=>$this->input->post('ci_paciente'),
+    
+  );
+  $this->db->insert('users',$data);
+}
+
+
+ function lista_usuarios($limit, $start)
     {
         $sql = 'select * from `users` order by id limit ' . $start . ', ' . $limit;
         $query = $this->db->query($sql);
         return $query->result();
     }
 
- /*function tabla_planilla($limit, $start)
-    {
-        $sql = 'select * from `planilla_pagos` order by nombre limit ' . $start . ', ' . $limit;
-        $query = $this->db->query($sql);
-        return $query->result();
-    }
-
-    */
 
   function tabla_t($limit, $start)
     {
@@ -71,15 +103,6 @@ return $query->result(), $query2->result();
         $query = $this->db->query($sql);
         return $query->result();
     }
-
-    /*function eliminar(){
-
-
-      $id =$this->input->post('id');
-
-      $sql = $this->db->query(' DELETE FROM `causante` WHERE id = "'.$id.'"');
-    return $sql;
-    } */
 
 }
 

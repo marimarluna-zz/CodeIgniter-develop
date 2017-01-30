@@ -35,6 +35,7 @@ function __construct()
     'nombre'=>$this->input->post('nombre'),
     'apellido'=>$this->input->post('apellido'),
     'telefono'=>$this->input->post('telefono'),
+    'ci_especialista_asociado'=>$this->input->post('ci_especialista'),
     'direccion'=>$this->input->post('direccion')
   );
   $this->db->insert('paciente',$data);

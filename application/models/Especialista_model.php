@@ -19,8 +19,7 @@ function __construct()
 
   public function guardar(){
 
-    $ci_especialista = $this->input->post('ci_especialista');
-    $perfil = 'Especialista'  ;
+    $ci_especialista =  $this->input->post('n')."".$this->input->post('ci_especialista');
 
   $data=array(
     
@@ -34,14 +33,23 @@ function __construct()
   );
   $this->db->insert('especialista',$data);
 
- $dat=array(
-    'id'=>$ci_especialista,
-    'perfil'=>$perfil,
-    'username'=>$this->input->post('username'),
-    'password'=>$this->input->post('password')
-  );
+}
 
-  $this->db->insert('users', $dat);
+public function guardar_asistente(){
+
+
+  $ci_asistente =  $this->input->post('n')."".$this->input->post('ci_asistente');
+
+  $data=array(
+    
+    'ci_especialista_asociaciado'=>$this->input->post('ci_especialista'),
+    'nombre'=>$this->input->post('nombre'),
+    'apellido'=>$this->input->post('apellido'),
+    'telefono'=>$this->input->post('telefono'),
+    'cedula'=>$ci_asistente
+  );
+  $this->db->insert('asistente',$data);
+
 }
 
 function editar(){
@@ -83,7 +91,31 @@ function editar(){
         $filtro = $this->input->post('filtro');
 
 
-        $sql = 'select * from `especialista` where `'.$filtro.'` = "'.$campo.'"  order by nombre limit ' . $start . ', ' . $limit;
+        $sql = 'select * from `especialista` where `'.$filtro.'` like "%'.$campo.'%"  order by nombre limit ' . $start . ', ' . $limit;
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
+    function tabla_ta($limit, $start)
+    {
+        
+        $campo = $this->input->post('busqueda');
+        $filtro = $this->input->post('filtro');
+
+
+        $sql = 'select * from `asistente` where `'.$filtro.'` like "%'.$campo.'%"  order by nombre limit ' . $start . ', ' . $limit;
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
+    function tabla_pa($limit, $start)
+    {
+        
+        $campo = $this->input->post('busqueda');
+        $filtro = $this->input->post('filtro');
+
+
+        $sql = 'select * from `paciente` where `'.$filtro.'` like "%'.$campo.'%"  order by nombre limit ' . $start . ', ' . $limit;
         $query = $this->db->query($sql);
         return $query->result();
     }
@@ -109,6 +141,13 @@ function buscar() {
 
 
  }
+
+ function tabla_a($limit, $start)
+    {
+        $sql = 'select * from `asistente` order by nombre limit ' . $start . ', ' . $limit;
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
 
 }
 
