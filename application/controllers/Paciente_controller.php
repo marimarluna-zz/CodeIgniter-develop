@@ -52,6 +52,9 @@ class Paciente_controller extends CI_Controller {
      $this->load->model('paciente_model');
      $this->paciente_model->guardar();
 
+     $this->load->model('usuario_model');
+     $this->usuario_model->guardar_paciente();
+
        $data['usuario'] = $this->input->post('usuario');
        $data['password'] = $this->input->post('clave');
        $data['perfil'] = $this->input->post('perfil');

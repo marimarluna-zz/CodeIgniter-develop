@@ -123,10 +123,10 @@ class Usuario_controller extends CI_Controller {
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
         //call the model function to get the department data
-        $data['deptlist'] = $this->usuario_model->tabla_p($config["per_page"], $data['page']);           
+        $data['deptlist'] = $this->usuario_model->lista_usuarios($config["per_page"], $data['page']);           
 
-        $data['pagination'] = $this->pagination->create_links();
- $data['usuario'] = $this->input->post('usuario');
+       $data['pagination'] = $this->pagination->create_links();
+       $data['usuario'] = $this->input->post('usuario');
        $data['password'] = $this->input->post('clave');
        $data['perfil'] = $this->input->post('perfil');
        $data['id'] = $this->input->post('id');
