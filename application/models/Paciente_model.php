@@ -172,6 +172,32 @@ function editar() {
     return $query->result();
  }
 
+ function buscar2() {
+ 
+   #se crea una variable para capturar el dato - aqui esta lo que te dije del nombre y el id del input, despues del post debe ir ese nombre, asi obtienes lo que este en el campo
+
+   $cedula = $sql->id;  
+   
+   $query = $this->db->select('*')
+                      ->from('paciente')
+                      ->where('ci_paciente', $cedula)
+                      ->get();
+    $sql = $query->row();
+      return $sql;
+ }
+
+ function buscar_informes2() {
+ 
+   #se crea una variable para capturar el dato - aqui esta lo que te dije del nombre y el id del input, despues del post debe ir ese nombre, asi obtienes lo que este en el campo
+   $cedula = $sql->id;  
+   
+   $query = $this->db->select('*')
+                      ->from('informe')
+                      ->where('ci_paciente', $cedula)
+                      ->get();
+    return $query->result();
+ }
+
  function informe($file_name){
 
 
