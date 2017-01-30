@@ -96,7 +96,7 @@ class VerifyLogin extends CI_Controller {
       $this->load->view('menu_navegacion_asis', $data);
         $this->load->view('asistente/menu_principal', $data);
      }else if($val == 'Paciente'){
-      $this->load->view('menu_navegacion_paci', $data);
+      $this->load->view('menu_navegacion', $data);
         $this->load->view('paciente/menu_principal', $data);
      }
 
