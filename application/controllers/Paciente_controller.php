@@ -521,6 +521,26 @@ public function tabla_informe()
  
  }
 
+ function ver2(){
+
+  $this->load->model('paciente_model');
+  $data['datos'] = $this->paciente_model->buscar(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
+  $data['informe'] = $this->paciente_model->buscar_informes(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
+
+       $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+       $data['ci_paciente'] = $this->input->post('ci_paciente');    
+
+  $this->load->view('menu_navegacion_espe',$data);
+  
+  $this->load->view('ver_paciente2',$data);
+  $this->load->view('v_tabla_informe',$data);
+
+ 
+ }
+
 
  
 }

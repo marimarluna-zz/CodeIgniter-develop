@@ -89,9 +89,15 @@ class VerifyLogin extends CI_Controller {
      if($val == 'Administrador'){
       $this->load->view('menu_navegacion_admin', $data);
         $this->load->view('administrador/menu_principal', $data);
-     }else{
+     }else if($val == 'Especialista'){
       $this->load->view('menu_navegacion_espe', $data);
         $this->load->view('especialista/menu_principal', $data);
+     }else if($val == 'Asistente'){
+      $this->load->view('menu_navegacion_asis', $data);
+        $this->load->view('asistente/menu_principal', $data);
+     }else if($val == 'Paciente'){
+      $this->load->view('menu_navegacion_paci', $data);
+        $this->load->view('paciente/menu_principal', $data);
      }
 
   } else {

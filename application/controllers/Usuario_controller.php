@@ -103,7 +103,7 @@ class Usuario_controller extends CI_Controller {
   $this->usuario_model->editar_perfil();
 
   
-  $this->load->view('login');
+  redirect('login', 'refresh');
  
  }
 
