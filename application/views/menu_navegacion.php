@@ -1,72 +1,111 @@
 <html>
-
-
-    <script type="text/javascript" src="<?= base_url().'assents/jq/jquery.min.js'?>"></script>
-
 <head>
 
-<link href="<?= base_url().'assents/css/dropdown-submenu.css'?>" rel="stylesheet">
 
-<nav class="navbar navbar-default sidebar " role="navigation" style="background:#0EC20B ;">
-  <!-- El logotipo y el icono que despliega el menú se agrupan
-       para mostrarlos mejor en los dispositivos móviles -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse"
-            data-target=".navbar-ex1-collapse">
-      <span class="sr-only" >Desplegar navegación</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-  </div>
+<style>
+        .btn-link{
+          border:none;
+          outline:none;
+          background:none;
+          cursor:pointer;
+          color:#0000EE;
+          padding:0;
+          text-decoration:underline;
+          font-family:inherit;
+          font-size:inherit;
+          color: blue;
+
+        }
+      </style>
 
 
- 
-
+  <div class="container-fluid">
+    <!-- Second navbar for categories -->
+    <nav class="navbar navbar-default">
     
+        <img height="13%" width="100%" src="<?=base_url().'assents/img/banner.png'?>">
+      
+      <div class="container" style="margin-top:-4%">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <form name="form_prueba" action="<?= base_url().'login/inicio'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+      <button type="submit" value='login' style="margin-top:-1%; position:absolute" name="datos" class="btn btn-link"><img src="<?=base_url().'assents/img/nhisres100.png'?>" style="max-width:65px"></button>    
+    </form> 
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          
+          <ul class="nav navbar-nav navbar-right">
+            <div class="row col-sm-12">
+        <div class="col-sm-3">
+          <form name="form_prueba" action="<?= base_url().'Paciente_controller'?>" method="POST" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+      <button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-link">Crear Paciente</button>    
+    </form>   
+        </div>
+        <div class="col-sm-3">
+          <form name="form_prueba" action="<?= base_url().'paciente_controller/tabla_paciente'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+      <button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-link">Lista de Pacientes</button>    
+    </form>   
+        </div>
+        <div class="col-sm-3">
+          <form name="form_prueba" action="<?= base_url().'paciente_controller/buscar_paciente'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+      <button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-link">Buscar Paciente</button>    
+    </form>   
+        </div>
+        <div class="col-sm-2">   
 
-    <ul class="nav navbar-nav navbar-left">
 
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-       
-        <li><a href="#">Menu Principal <span class="sr-only">(current)</span></a></li>
-        <li><a href="<?php echo base_url();?>usuarios_controller">Mi Perfil</a></li>
-        <li class="active"><a href="<?php echo base_url();?>usuarios_controller">Usuarios</a></li>
-        
-      </ul>
-    </div>
+          <form name="form_prueba" action="<?= base_url().'usuario_controller/buscar_perfil'?>" method="POST"><input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+                <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+          <button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-link"><span class="glyphicon glyphicon-user"></span> <?php echo $usuario; ?></button>    
+        </form> 
 
 
 
 
-    </ul>    
-  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
-       otro elemento que se pueda ocultar al minimizar la barra -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-   
-
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-        <h5><a><b><span class="glyphicon glyphicon-user"></span> <?php echo $usuario; ?></b></a></h5>
-      </li>
-      <li>
-        <a style="margin-top: -6%;" href="<?php echo base_url(); ?>home/logout"><b>Salir <span class="glyphicon glyphicon-share-alt"></span></b></a>
-      </li>
-    </ul>
 
 
-  </div>
-</nav>
-  
-    <script src="<?= base_url().'assents/js/jquery.js'?>"></script>
-  <script src="<?= base_url().'assents/js/bootstrap.min.js'?>"></script>
+
+
+
+
+        </div>
+        <div class="col-sm-1">
+      <h5><a href="<?php echo base_url(); ?>login"><b><span class="glyphicon glyphicon-share-alt"></span>Salir</b></a></h5>    
+        </div>
+      </div>
+          </ul>
+    
+    
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+    
+  </div><!-- /.container-fluid -->
+
 
 </head>
 <body>
-
-
-
-
 </body>
 </html>
