@@ -49,7 +49,7 @@ public function guardar2(){
 
    $query = $this->db->select('*')
                       ->from('especialista')
-                      ->where('ci_especialista', $cedula)
+                      ->where(('ci_especialista like  "%'.$cedula.'%"'))
                       ->get();
 
           $sql = $query->row();
@@ -110,7 +110,7 @@ function editar() {
 
           $query = $this->db->select('*')
                         ->from('especialista')
-                        ->where('ci_especialista', $cedula)
+                        ->where(('ci_especialista like "%'.$cedula.'%"'))
                         ->get();
 
           $sql1 = $query->row();
