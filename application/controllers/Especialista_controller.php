@@ -197,6 +197,56 @@ class Especialista_controller extends CI_Controller {
        $this->load->view('v_tabla_especialista',$data);
  }
 
+ function editar_a(){
+
+  $this->load->model('especialista_model');
+  $this->especialista_model->editar_a();
+
+   //pagination settings
+        $config['base_url'] = site_url('Especialista_controller/editar_a');
+        $config['total_rows'] = $this->db->count_all('asistente');
+        $config['per_page'] = "7";
+        $config["uri_segment"] = 3;
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="prev">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        $data['deptlist'] = $this->especialista_model->tabla_a($config["per_page"], $data['page']);           
+
+        $data['pagination'] = $this->pagination->create_links();
+
+         $data['usuario'] = $this->input->post('usuario');
+         $data['password'] = $this->input->post('clave');
+         $data['perfil'] = $this->input->post('perfil');
+         $data['id'] = $this->input->post('id');
+
+         $data['especialistas'] = $this->usuario_model->especialistas();
+
+         $this->load->view('menu_navegacion_admin', $data);
+         $this->load->view('v_tabla_asistentes',$data);
+ }
+
 function buscar(){
 
   $this->load->model('especialista_model');
@@ -213,6 +263,24 @@ function buscar(){
   $this->load->view('menu_navegacion_admin',$data);
   
   $this->load->view('editar_especialista',$data);
+ 
+ }
+
+ function buscar_a(){
+
+  $this->load->model('especialista_model');
+  $data['datos'] = $this->especialista_model->buscar_a(); // recuerda lo de data['datos'] que es con lo que enviamos informacion
+
+  $data['usuario'] = $this->input->post('usuario');
+  $data['password'] = $this->input->post('clave');
+  $data['perfil'] = $this->input->post('perfil');
+  $data['id'] = $this->input->post('id');
+
+  $data['especialidades'] = $this->usuario_model->especialistas();
+
+  $this->load->view('menu_navegacion_admin',$data);
+  
+  $this->load->view('editar_asistente',$data);
  
  }
   public function tabla()
@@ -427,6 +495,22 @@ function buscar(){
     }
 
 
+    function lista_especialidades() {
+
+      $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+
+       $data['especialistas'] = $this->usuario_model->especialidades();
+
+       $this->load->view('menu_navegacion_admin', $data);
+       $this->load->view('tabla_especialidades',$data);  
+
+
+    }
+
+
 
 
 
@@ -548,6 +632,56 @@ function buscar(){
 
          $this->load->view('menu_navegacion_admin', $data);
          $this->load->view('v_tabla_asistentes',$data);
+   }
+  
+  
+ }
+
+ function agregar_especialidades(){
+
+
+    $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+ 
+ 
+    $especialidad = $this->input->post('especialidad');
+
+    $query = $this->db->select('*')
+                      ->from('especialidades')
+                      ->where('nombre', $especialidad)
+                      ->get();
+
+          $sql = $query->row();
+
+
+  if ($query -> num_rows() != 0 ){
+   
+   $data['error'] = "Ya existe la especialidad descrita";
+
+       $data['especialistas'] = $this->usuario_model->especialidades();
+
+       $this->load->view('menu_navegacion_admin', $data);
+       $this->load->view('tabla_especialidades',$data);  
+
+
+
+  }else{
+
+     $this->load->model('especialista_model');
+     $this->especialista_model->agregar_especialidad();
+
+    $data['error'] = "Especialidad agregada exitosamente";
+    $data['usuario'] = $this->input->post('usuario');
+       $data['password'] = $this->input->post('clave');
+       $data['perfil'] = $this->input->post('perfil');
+       $data['id'] = $this->input->post('id');
+
+       $data['especialistas'] = $this->usuario_model->especialidades();
+
+       $this->load->view('menu_navegacion_admin', $data);
+       $this->load->view('tabla_especialidades',$data);  
    }
   
   

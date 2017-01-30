@@ -8,6 +8,7 @@ class Paciente_controller extends CI_Controller {
    $this->load->library('pagination');
 
    $this->load->model('paciente_model');
+   $this->load->model('usuario_model');
  }
  
  function index()
@@ -73,12 +74,48 @@ class Paciente_controller extends CI_Controller {
   $this->load->model('paciente_model');
   $this->paciente_model->editar();
 
-   $data['usuario'] = $this->input->post('usuario');
-       $data['password'] = $this->input->post('clave');
-       $data['perfil'] = $this->input->post('perfil');
-       $data['id'] = $this->input->post('id');
+   $config['base_url'] = site_url('Paciente_controller/editar');
+        $config['total_rows'] = $this->db->count_all('paciente');
+        $config['per_page'] = "7";
+        $config["uri_segment"] = 3;
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
 
-  redirect('paciente_controller/tabla', 'refresh');
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="prev">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        $data['deptlist'] = $this->paciente_model->tabla_p($config["per_page"], $data['page']);           
+
+        $data['pagination'] = $this->pagination->create_links();
+
+         $data['usuario'] = $this->input->post('usuario');
+         $data['password'] = $this->input->post('clave');
+         $data['perfil'] = $this->input->post('perfil');
+         $data['id'] = $this->input->post('id');
+
+         $data['especialistas'] = $this->usuario_model->especialistas();
+
+         $this->load->view('menu_navegacion_admin', $data);
+         $this->load->view('v_tabla_paciente',$data);
 
  }
 
@@ -92,7 +129,7 @@ class Paciente_controller extends CI_Controller {
        $data['perfil'] = $this->input->post('perfil');
        $data['id'] = $this->input->post('id');
 
-  $this->load->view('menu_navegacion_espe',$data);
+  $this->load->view('menu_navegacion_admin',$data);
   
   $this->load->view('editar_paciente',$data);
  
