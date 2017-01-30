@@ -52,6 +52,16 @@ public function guardar_asistente(){
 
 }
 
+public function agregar_especialidad(){
+
+  $data=array(
+    
+    'nombre'=>$this->input->post('especialidad')
+  );
+  $this->db->insert('especialidades',$data);
+
+}
+
 function editar(){
 
    $id = $this->input->post('valor');
@@ -71,6 +81,26 @@ function editar(){
 
     #aqui simplemente decimos que pase el arreglo anterior a la tabla especialista
     $this->db->update('especialista', $data);
+    
+
+} 
+
+function editar_a(){
+      
+    $data = array(
+        'nombre'=>$this->input->post('nombre'),
+        'apellido'=>$this->input->post('apellido'),
+        'cedula'=>$this->input->post('cedula'),
+        'telefono'=>$this->input->post('telefono'),
+        'ci_especialista_asociaciado'=>$this->input->post('especialista')
+             );
+    
+    #aqui colocamos el campo unico y la variable que declaramos arriba esto viene siendo como un Where ci_especialista = $cedula
+    $this->db->where('cedula', $this->input->post('cedula'));
+    
+
+    #aqui simplemente decimos que pase el arreglo anterior a la tabla especialista
+    $this->db->update('asistente', $data);
     
 
 } 
@@ -134,6 +164,23 @@ function buscar() {
    $query = $this->db->select('*')
                       ->from('especialista')
                       ->where('ci_especialista', $cedula)
+                      ->get();
+    $sql = $query->row();
+      return $sql;
+      return $sql1;
+
+
+ }
+
+ function buscar_a() {
+ 
+   #se crea una variable para capturar el dato - aqui esta lo que te dije del nombre y el id del input, despues del post debe ir ese nombre, asi obtienes lo que este en el campo
+   
+  $cedula = $this->input->post('cedula');
+
+   $query = $this->db->select('*')
+                      ->from('asistente')
+                      ->where('cedula', $cedula)
                       ->get();
     $sql = $query->row();
       return $sql;

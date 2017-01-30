@@ -44,7 +44,7 @@ function __construct()
 
 function editar() {
 
-   $id = $this->input->post('valor');
+   $id = $this->input->post('cedula');
       
     $data = array(
         'nombre'=>$this->input->post('nombre'),
