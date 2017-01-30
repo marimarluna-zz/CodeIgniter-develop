@@ -42,6 +42,40 @@ function __construct()
 
 }
 
+
+public function guardar2(){
+
+    $cedula = $this->input->post('id');
+
+   $query = $this->db->select('*')
+                      ->from('especialista')
+                      ->where('ci_especialista', $cedula)
+                      ->get();
+
+          $sql = $query->row();
+
+          $name_especialista = $sql->nombre." ".$sql->apellido;
+
+
+
+    $ci_paciente =  $this->input->post('n')."".$this->input->post('ci_paciente');
+
+  $data=array(
+    
+    'ci_paciente'=>$ci_paciente,
+    'nombre'=>$this->input->post('nombre'),
+    'apellido'=>$this->input->post('apellido'),
+    'telefono'=>$this->input->post('telefono'),
+    'ci_especialista_asociado'=>$name_especialista,
+    'direccion'=>$this->input->post('direccion')
+  );
+  $this->db->insert('paciente',$data);
+
+}
+
+
+
+
 function editar() {
 
    $id = $this->input->post('cedula');
@@ -65,6 +99,26 @@ function editar() {
  function tabla_p($limit, $start)
     {
         $sql = 'select * from `paciente` order by ci_paciente limit ' . $start . ', ' . $limit;
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
+    function tabla_paciente($limit, $start)
+    {
+
+          $cedula = $this->input->post('id');
+
+          $query = $this->db->select('*')
+                        ->from('especialista')
+                        ->where('ci_especialista', $cedula)
+                        ->get();
+
+          $sql1 = $query->row();
+
+          $name_especialista = $sql1->nombre." ".$sql1->apellido;
+
+
+        $sql = 'select * from `paciente` where `ci_especialista_asociado` = "'.$name_especialista.'" order by ci_paciente limit ' . $start . ', ' . $limit;
         $query = $this->db->query($sql);
         return $query->result();
     }

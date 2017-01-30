@@ -11,7 +11,7 @@ function __construct()
 
    $id = $this->input->post('id');
   
-  $query = $this->db->query(' SELECT * FROM `users`');
+  $query = $this->db->query(' SELECT * FROM `users` where id = '.$id);
     $sql = $query->row();
   return $sql;
 
@@ -42,13 +42,13 @@ function __construct()
 
   public function guardar_especialista(){
 
-
+    $name = $this->input->post('nombre')."-".$this->input->post('ci_especialista');
 
   $data=array(
     
     'id'=>$this->input->post('ci_especialista'),
     'perfil'=>'Especialista',
-    'username'=>$this->input->post('nombre'),
+    'username'=>$name,
     'password'=>$this->input->post('ci_especialista'),
     
   );
@@ -57,13 +57,13 @@ function __construct()
 
 public function guardar_asistente(){
 
-
+  $name = $this->input->post('nombre')."-".$this->input->post('ci_especialista');
 
   $data=array(
     
     'id'=>$this->input->post('ci_asistente'),
     'perfil'=>'Asistente',
-    'username'=>$this->input->post('nombre'),
+    'username'=>$name,
     'password'=>$this->input->post('ci_asistente'),
     
   );
@@ -72,11 +72,13 @@ public function guardar_asistente(){
 
 public function guardar_paciente(){
 
+  $name = $this->input->post('nombre')."-".$this->input->post('ci_paciente');
+
   $data=array(
     
     'id'=>$this->input->post('ci_paciente'),
     'perfil'=>'Paciente',
-    'username'=>$this->input->post('nombre'),
+    'username'=>$name,
     'password'=>$this->input->post('ci_paciente'),
     
   );
@@ -103,6 +105,18 @@ public function guardar_paciente(){
         $query = $this->db->query($sql);
         return $query->result();
     }
+
+
+    function editar_perfil() {
+      
+    $data = array(
+        'username'=>$this->input->post('nombre'),
+        'password'=>$this->input->post('password1')
+             );
+    $this->db->where('id', $this->input->post('id'));
+    $this->db->update('users', $data);
+
+}
 
 }
 
