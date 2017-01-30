@@ -2,10 +2,30 @@
 <head>
 
 
+<style>
+        .btn-link{
+          border:none;
+          outline:none;
+          background:none;
+          cursor:pointer;
+          color:#0000EE;
+          padding:0;
+          text-decoration:underline;
+          font-family:inherit;
+          font-size:inherit;
+          color: blue;
+
+        }
+      </style>
+
+
   <div class="container-fluid">
     <!-- Second navbar for categories -->
-    <nav class="navbar navbar-default" style="background:#0EC20B">
-      <div class="container">
+    <nav class="navbar navbar-default">
+    
+        <img height="13%" width="100%" src="<?=base_url().'assents/img/banner.png'?>">
+      
+      <div class="container" style="margin-top:-4%">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
@@ -18,7 +38,7 @@
 							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info"><img src="<?=base_url().'assents/img/nhisres100.png'?>" style="max-width:65px"></button>    
+			<button type="submit" value='login' style="margin-top:-1%; position:absolute" name="datos" class="btn btn-info"><img src="<?=base_url().'assents/img/nhisres100.png'?>" style="max-width:65px"></button>    
 		</form>	
         </div>
     
@@ -32,7 +52,7 @@
 							  <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 							  <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn btn-info">Crear Paciente</button>    
+			<button type="submit" value='login' style="margin-top:9%" name="datos" class="btn-link">Crear Paciente</button>    
 		</form>		
 		    </div>
 		    <div class="col-sm-3">

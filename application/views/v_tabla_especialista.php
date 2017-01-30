@@ -4,32 +4,119 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
 
-<script type="text/javascript">
-<!--
- 
-$(document).ready( function() {
-        $('#mensaje').delay(4000).fadeOut();
-      });
-//-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#prueba").click(function(){
+        $("#t_prueba").toggle();
+    });
+});
 </script>
 
 
 <link href="<?= base_url().'assents/css/bootstrap.min.css'?>" rel="stylesheet">
-<title>Lista  Especialista</title>
+
+<title>Modulo Especialistas</title>
 </head>
 
 <body>
 
-<h1 align="center"><b>Lista de Especialistas</b></h1>
+
+
+<button id="prueba" class="btn btn-info" style="margin-left:5%">Formulario para especialista</button>
+<a href="#myModal" class="btn btn-primary" data-toggle="modal">Crear Nueva Receta<span class="glyphicon glyphicon-apple"></span></a>
+
+
 <div id="mensaje"><h3 align="center"><?=(isset($error))?$error:''?></h3></div>
 
 
 <br>
 
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-left:-5%">
 
-        <div class="col-md-12">
+    <div class="col-sm-6" id="t_prueba" style="display:none">
+
+        <h1 align="center"><b>Crear Especialistas</b></h1>
+        <form name="form_prueba" action="<?= base_url().'especialista_controller/guardar'?>" method="POST">
+
+            <div class="row">
+              <div class="col-sm-5 col-sm-offset-1 form-group">
+                <label>Nombre</label>
+                <input type="text" id="nombre" onkeyup="this.value=this.value.replace(/[^a-z A-ZñÑ]/g,'');" name="nombre" placeholder="Nombre" class="form-control" required>
+              </div>
+              <div class="col-sm-5 form-group">
+                <label>Apellido</label>
+                <input type="text" id="apellido" onkeyup="this.value=this.value.replace(/[^a-z A-ZñÑ]/g,'');" name="apellido" placeholder="Apellido" class="form-control" required="">
+              </div>
+            </div>
+            <div class="row">
+              
+
+           <label style="margin-left:12%">Cedula</label>
+           <label style="margin-left:32%">Telefono</label>
+           <br>
+              <div class="col-sm-2 col-sm-offset-1 form-group">
+          <select name="n" id="n" class="form-control">
+              <option value="V" >V</option>
+              <option value="E" >E</option>
+              </select>
+          </div>
+          <div class="col-sm-3 form-group">
+                <input type="number" id="ci_especialista" name="ci_especialista" placeholder="Cedula" class="form-control">
+          </div>
+              <div class="col-sm-5 form-group">
+               
+                <input type="number" id="telefono" name="telefono" placeholder="Telefono" class="form-control">
+              </div> 
+                </div>
+
+               <div class="row">
+              <div class="col-sm-5 col-md-offset-1 form-group">
+                <label>Especialidad</label>
+                <select requird class="form-control" name="especializacion" id="especializacion" required="">
+                                  <option disabled="disabled">Especialidades</option>
+                                    <?php 
+                                    foreach($especialidades as $e)
+                                    { 
+                                      echo '<option value="'.$e->nombre.'"> '. $e->nombre . '</option>';
+                                    }
+                                    ?>
+                                  </select>
+              </div>
+              <div class="col-sm-5 form-group">
+                <label>Socio</label>
+                <input type="text" id="socio" name="socio" placeholder="Socio" class="form-control" required="">
+              </div> 
+            </div>
+
+
+              <div class="col-sm-12">
+              <div class="col-sm-12 form-group">
+                <div class="col-sm-12 form-group">
+                <label>Ubicacion</label>
+                <input type="text" id="ubicacion" name="ubicacion" placeholder="Direccion" class="form-control" required="">
+              </div>
+                                
+              </div>
+                                <input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+                              <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+                              <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+                              <input style = "display:none"  type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+              </div>
+
+              <br><br>
+              <div align="center">
+                <button class="btn btn-lg btn-info" type="submit" name="submit" id="MyBtn" value="login"><span class="glyphicon glyphicon-check"></span>  Guardar </button>       
+              </div>          
+
+        </form> 
+
+        
+    </div>
+
+        <div class="col-md-6">
+        <h1 align="center"><b>Lista de Especialistas</b></h1>
                 <form name="form_prueba" action="<?= base_url().'especialista_controller/buscar_t'?>" method="POST">
                     <div class=" col-md-6 ">
                         <input type="text" placeholder="Buscar por Nombre/Apellido/Cedula/Socio" id="busqueda" name="busqueda" class="form-control col-sm-2" required> 
@@ -39,17 +126,17 @@ $(document).ready( function() {
                             <option value="nombre" >Nombre</option>
                             <option value="apellido" >Apellido</option>
                             <option value="ci_especialista" >Cedula</option>
-                            <option value="socio" >Socio</option>
+                            <option value="especializacion" >Especializacion</option>
                        </select>
                   </div>
                     <div class="row col-sm-1"> 
                         <button type="submit" value='login' name="datos" class="btn btn-success" > <span class="glyphicon glyphicon glyphicon-search"> </span></button>
                     </div>
-																	<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+							  <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
 							  <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
 							  <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
 							  <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
-                </form>0
+                </form>
                 <form action="<?php echo base_url(); ?>especialista_controller/tabla" method="POST">
                     <div class="col-sm-1 col-md-offset-1" style="margin-top:-3%"> 
                             <button type="submit" value='login' name="datos" class="btn btn-danger" > Limpiar </button>
@@ -66,8 +153,7 @@ $(document).ready( function() {
                         <th>Apellido</th>
                         <th>Cedula</th>
                         <th>Telefono</th>
-                        <th>Socio</th>
-                        <th>Ubicacion</th>
+                        <th>Especializacion</th>
                         <th>Editar</th>
                     </tr>
                 </thead>
@@ -78,8 +164,7 @@ $(document).ready( function() {
                         <td><?php echo $deptlist[$i]->apellido; ?></td>
                         <td><?php echo $deptlist[$i]->ci_especialista; ?></td>
                         <td><?php echo $deptlist[$i]->telefono; ?></td>
-                        <td><?php echo $deptlist[$i]->socio; ?></td>
-                        <td><?php echo $deptlist[$i]->ubicacion; ?></td>
+                        <td><?php echo $deptlist[$i]->especializacion; ?></td>
                         <td><div class="col-md-12"> 
                                 <form name="form_prueba" action="<?= base_url().'especialista_controller/buscar'?>" method="POST">
                                     <div class="" style="display:none">
@@ -100,13 +185,69 @@ $(document).ready( function() {
                     <?php } ?>
                 </tbody>
             </table>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
+            <div class="row" id="prueba_2">
+        <div class="col-md-10 text-center">
             <?php echo $pagination; ?>
         </div>
     </div>
+        </div>
+    </div>
+    
+</div>
+
+
+  <div id="myModal" class="modal fade" role="dialog">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Formulario para el registro de recetas</h4>
+      </div>
+      <div class="modal-body">
+
+        <form name="form_prueba" action="<?= base_url().'recetas_controller/guardar'?>" method="POST">
+
+          <div class="row"> 
+            <div class="col-sm-8 col-sm-offset-2">
+              <label>Nombre de la Receta</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control" required>
+            </div>
+          </div>
+          <br>
+          <div class="row">  
+            <div class="col-sm-4 col-sm-offset-2">
+              <label>Precio</label>
+              <input type="text" id="precio" name="precio" placeholder="Precio" class="form-control" required>
+            </div>
+            <div class="col-sm-4">
+              <label>Servcio</label>
+              <select class="form-control" name="entrada" id="entrada">
+                <option value="cocina">Cocina</option>
+                <option value="bar">Bar</option>
+              </select>
+            </div>
+          </div>
+   
+          <br>
+          <div class="row">
+
+            <div class="col-sm-2 col-sm-offset-5">
+              <button type="submit" value='login' name="datos" class="btn btn-primary" > <span class="glyphicon glyphicon-floppy-disk"> </span> Crear</button>
+            </div>
+
+          </div>
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 </body>

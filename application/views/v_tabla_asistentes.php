@@ -15,14 +15,14 @@ $(document).ready(function(){
 
 
 <link href="<?= base_url().'assents/css/bootstrap.min.css'?>" rel="stylesheet">
-<title>Modulo Paciente</title>
+<title>Modulo Asistente</title>
 </head>
 
 <body>
 
 
 
-<button id="prueba" class="btn btn-info">Formulario para Pacientes</button>
+<button id="prueba" class="btn btn-info">Formulario para Asistentes</button>
 
 
 <div id="mensaje"><h3 align="center"><?=(isset($error))?$error:''?></h3></div>
@@ -35,8 +35,8 @@ $(document).ready(function(){
 
     <div class="col-sm-6" id="t_prueba" style="display:none">
 
-        <h1 align="center"><b>Crear Paciente</b></h1>
-        <form name="form_prueba" action="<?= base_url().'paciente_controller/guardar'?>" method="POST">
+        <h1 align="center"><b>Crear Asistente</b></h1>
+        <form name="form_prueba" action="<?= base_url().'especialista_controller/guardar_asistente'?>" method="POST">
 
             <div class="row">
               <div class="col-sm-5 col-sm-offset-1 form-group">
@@ -61,37 +61,30 @@ $(document).ready(function(){
               </select>
           </div>
           <div class="col-sm-3 form-group">
-                <input type="number" min="0" id="ci_paciente" name="ci_paciente" placeholder="Cedula" class="form-control">
+                <input type="number" id="ci_asistente" name="ci_asistente" placeholder="Cedula" class="form-control">
           </div>
               <div class="col-sm-5 form-group">
                
                 <input type="number" id="telefono" name="telefono" placeholder="Telefono" class="form-control">
               </div> 
                 </div>
-            <div class="row">
-              <div class="col-sm-10 col-md-offset-1 form-group">
+
+               <div class="row">
+              <div class="col-sm-10 col-sm-offset-1 form-group">
                 <label>Especialista Asociado</label>
                 <select requird class="form-control" name="ci_especialista" id="ci_especialista" required="">
                                   <option disabled="disabled">Especialistas</option>
                                     <?php 
                                     foreach($especialistas as $e)
                                     { 
-                                      echo '<option value="'. $e->nombre .' '.$e->apellido.'">  '. $e->nombre .' '.$e->apellido.' C.I:'.$e->ci_especialista.'</option>';
+                                      echo '<option value="'. $e->nombre .' '.$e->apellido.'">  '. $e->nombre .' '.$e->apellido.' '.$e->ci_especialista.'</option>';
                                     }
                                     ?>
                                   </select>
               </div> 
             </div>
 
-
               <div class="col-sm-12">
-              <div class="col-sm-12 form-group">
-                <div class="col-sm-12 form-group">
-                <label>Direccion</label>
-                <input type="text" id="direccion" name="direccion" placeholder="Direccion" class="form-control" required="">
-              </div>
-                                
-              </div>
                                 <input  style = "display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
                               <input style = "display:none"  type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
                               <input style = "display:none"  type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
@@ -109,8 +102,8 @@ $(document).ready(function(){
     </div>
 
         <div class="col-md-6">
-        <h1 align="center"><b>Lista de Pacientes</b></h1>
-                <form name="form_prueba" action="<?= base_url().'especialista_controller/buscar_pa'?>" method="POST">
+        <h1 align="center"><b>Lista de Asistentes</b></h1>
+                <form name="form_prueba" action="<?= base_url().'especialista_controller/buscar_ta'?>" method="POST">
                     <div class=" col-md-6 ">
                         <input type="text" placeholder="Buscar por Nombre/Apellido/Cedula/Socio" id="busqueda" name="busqueda" class="form-control col-sm-2" required> 
                     </div>
@@ -119,25 +112,25 @@ $(document).ready(function(){
                             <option value="nombre" >Nombre</option>
                             <option value="apellido" >Apellido</option>
                             <option value="ci_especialista" >Cedula</option>
-                            <option value="ci_especialista_asociado" >Especialista Asociado</option>
+                            <option value="ci_especialista_asociaciado" >Especialista Asociado</option>
                        </select>
                   </div>
                     <div class="row col-sm-1"> 
                         <button type="submit" value='login' name="datos" class="btn btn-success" > <span class="glyphicon glyphicon glyphicon-search"> </span></button>
                     </div>
-                              <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-                              <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-                              <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-                              <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+							  <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+							  <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+							  <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+							  <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
                 </form>
-                <form action="<?php echo base_url(); ?>administrador_controller/pacientes" method="POST">
+                <form action="<?php echo base_url(); ?>administrador_controller/asistentes" method="POST">
                     <div class="col-sm-1 col-md-offset-1" style="margin-top:-3%"> 
                             <button type="submit" value='login' name="datos" class="btn btn-danger" > Limpiar </button>
                     </div>
-                              <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-                              <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-                              <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-                              <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
+							  <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+							  <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+							  <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+							  <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" >
                 </form>
             <table class="table table-striped table-hover" cellpadding="60">
                 <thead>
@@ -155,18 +148,18 @@ $(document).ready(function(){
                     <tr>
                         <td><?php echo $deptlist[$i]->nombre; ?></td>
                         <td><?php echo $deptlist[$i]->apellido; ?></td>
-                        <td><?php echo $deptlist[$i]->ci_paciente; ?></td>
+                        <td><?php echo $deptlist[$i]->cedula; ?></td>
                         <td><?php echo $deptlist[$i]->telefono; ?></td>
-                        <td><?php echo $deptlist[$i]->ci_especialista_asociado; ?></td>
+                        <td><?php echo $deptlist[$i]->ci_especialista_asociaciado; ?></td>
                         <td><div class="col-md-12"> 
                                 <form name="form_prueba" action="<?= base_url().'especialista_controller/buscar'?>" method="POST">
                                     <div class="" style="display:none">
-                                        <input type="text" min="1" id="ci_especialista" name="ci_especialista" value="<?php echo $deptlist[$i]->ci_paciente;?>" class="form-control col-sm-2"> 
+                                        <input type="text" min="1" id="ci_especialista" name="ci_especialista" value="<?php echo $deptlist[$i]->cedula;?>" class="form-control col-sm-2"> 
                                     </div>
-                    <input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
-                    <input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
-                    <input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
-                    <input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" > 
+					<input style="display:none" type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="clave" name="clave" value="<?php echo $password; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="perfil" name="perfil" value="<?php echo $perfil; ?>"  class="form-control" >
+					<input style="display:none" type="text" id="id" name="id" value="<?php echo $id; ?>"  class="form-control" > 
                                     <div class="row col-sm-3" style="margin-left:5%"> 
                                         <button type="submit" value='login' name="datos" class="btn btn-success" > <span class="glyphicon glyphicon-user"> </span></button>
                                     </div>
